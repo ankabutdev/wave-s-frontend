@@ -1,0 +1,14 @@
+.main-container {
+    width: 100%;
+}
+
+.main-qisqa {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    border: 1px solid white;
+    height: 600px;
+    widows: 700px;
+}
