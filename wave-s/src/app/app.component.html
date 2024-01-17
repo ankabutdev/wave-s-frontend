@@ -1,1 +1,40 @@
-<router-outlet></router-outlet>
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <main>
+        <div class="main-container">
+            <div class="main-qisqa">
+                <p-tabMenu [model]="items" [activeItem]="activeItem">
+                    <ng-template pTemplate="item" let-item>
+                        <a class="p-menuitem-link flex justify-content-between align-items-center p-3"
+                            [routerLink]="item.url">
+                            <div>
+                                <span [class]="item.icon"></span>
+                                <span> {{ item.label }}</span>
+                            </div>
+                            <div>
+                                @if (item.shortcut) {
+                                <span [class]="item.shortcutClass">{{ item.shortcut }}</span>
+                                }
+                                @if (item.badge) {
+                                <p-badge [value]="item.badge" [severity]="item.badgeSeverity"></p-badge>
+                                }
+                            </div>
+                        </a>
+                    </ng-template>
+                </p-tabMenu>
+            </div>
+        </div>
+        <section class="content">
+            <router-outlet></router-outlet>
+        </section>
+    </main>
+</body>
+
+</html>
