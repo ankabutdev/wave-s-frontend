@@ -42,46 +42,19 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
     return document.querySelector('.loader');
   }
 
-  // showDialog: HTMLElement | null = document.getElementById("show__dialog");
-  // fullName: HTMLInputElement | null = document.getElementById("fname") as HTMLInputElement | null;
-  // telNum: HTMLInputElement | null = document.getElementById("tel") as HTMLInputElement | null;
-  // comment: HTMLInputElement | null = document.getElementById("comment") as HTMLInputElement | null;
-
-  // exitDialog() {
-  //   console.log("Exiting dialog");
-  //   if (this.showDialog) {
-  //     this.showDialog.style.zIndex = "-1";
-  //     this.showDialog.style.opacity = "0";
-  //   }
-  // }
-
-  // openDialog() {
-  //   console.log(this.showDialog);
-  //   if (this.showDialog) {
-  //     this.showDialog.style.zIndex = "1";
-  //     this.showDialog.style.opacity = "1";
-  //   }
-
   visible: boolean = false;
 
-  openDialog() {
-    alert("hi")
+  // Method to open the dialog
+  showDialog() {
     this.visible = true;
   }
 
-  //   if (this.fullName && this.telNum && this.comment) {
-  //     let commentObject = {
-  //       FullName: this.fullName.value,
-  //       TelNum: this.telNum.value,
-  //       Comment: this.comment.value,
-  //     };
-  //     console.log("Comment object:", commentObject);
+  // Method to close the dialog
+  closeDialog() {
+    this.visible = false;
+    // Add your logic to close the dialog here
+  }
 
-  //     this.fullName.value = "";
-  //     this.telNum.value = "";
-  //     this.comment.value = "";
-  //   }
-  // }
   toggleDarkLight() {
     var body = document.getElementById("body");
     var currentClass = body!.className;

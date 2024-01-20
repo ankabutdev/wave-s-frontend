@@ -1,9 +1,6 @@
 <div class="body">
-
     <!-- ! JUST WRAPPER  -->
     <div class="atom">
-
-
         <!-- ! LOADER SECTION  -->
         <!-- <div class="loader">
             <div class="loadingio-eclipse">
@@ -719,7 +716,7 @@
                             <input type="tel" name="tel" id="tel" placeholder="Введите ваш телефон" required />
                             <input type="text" name="comment" id="comment" placeholder="Комментарий" required />
                         </form>
-                        <button (click)="openDialog()" class="get__consultation">
+                        <button (click)="showDialog()" class="get__consultation">
                             Получить консультацию
                         </button>
                     </div>
@@ -859,4 +856,38 @@
             </div>
         </footer>
     </div>
+    <!-- ! SHOW DIALOG  -->
+    <p-dialog [(visible)]="visible" appendTo="show-dialog" class="show-dialog" id="show-dialog">
+        <div class="show-dialog-box">
+            <!-- ! EXIT BUTTON  -->
+            <button (click)="closeDialog()" class="show-dialog-exit" aria-label="Close">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="25" cy="25" r="24.5" stroke="white" />
+                    <path
+                        d="M24.9041 24.1581L28.2117 20.8506L29.1468 21.7857L25.8393 25.0933L29.1641 28.4181L28.229 29.3532L24.9041 26.0284L21.5793 29.3532L20.6442 28.4181L23.969 25.0933L20.6442 21.7684L21.5793 20.8333L24.9041 24.1581Z"
+                        fill="white" />
+                </svg>
+            </button>
+            <!-- ! DONE IMAGE  -->
+            <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M50.014 87.5C44.7963 87.5 39.905 86.5374 35.3399 84.6121C30.7748 82.6868 26.7904 80.0239 23.3868 76.6234C19.9832 73.223 17.3178 69.2424 15.3906 64.6816C13.4635 60.1208 12.5 55.2316 12.5 50.014C12.5 44.8124 13.463 39.929 15.389 35.3639C17.315 30.7988 19.9789 26.8144 23.3806 23.4108C26.7823 20.0072 30.7644 17.3379 35.3269 15.4027C39.8894 13.4676 44.7804 12.5 50 12.5C54.585 12.5 58.8897 13.2398 62.914 14.7195C66.9382 16.1992 70.5689 18.2372 73.8061 20.8333L71.5705 23.2292C68.6218 20.7986 65.3318 18.937 61.7006 17.6443C58.0694 16.3515 54.1692 15.7051 50 15.7051C40.4113 15.7051 32.2983 19.0238 25.661 25.661C19.0237 32.2983 15.7051 40.4113 15.7051 50C15.7051 59.5887 19.0237 67.7017 25.661 74.339C32.2983 80.9762 40.4113 84.2949 50 84.2949C59.5887 84.2949 67.7017 80.9762 74.339 74.339C80.9762 67.7017 84.2949 59.5887 84.2949 50C84.2949 47.9167 84.1253 45.9043 83.786 43.9629C83.4469 42.0216 82.9648 40.129 82.3398 38.2852L84.7276 35.8173C85.625 38.0128 86.3115 40.2965 86.7869 42.6685C87.2623 45.0406 87.5 47.4844 87.5 50C87.5 55.2196 86.5334 60.1106 84.6001 64.6731C82.6668 69.2356 79.9999 73.2177 76.5995 76.6194C73.199 80.0211 69.2184 82.685 64.6576 84.611C60.0968 86.537 55.2156 87.5 50.014 87.5ZM43.8542 66.1539L29.3108 51.5866L31.6747 49.1426L43.8542 61.3221L85.0561 20.1202L87.5241 22.484L43.8542 66.1539Z"
+                    fill="url(#paint0_linear_41_4841)" />
+                <defs>
+                    <linearGradient id="paint0_linear_41_4841" x1="12.5" y1="12.5" x2="91.8525" y2="17.3997"
+                        gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#69BDF9" />
+                        <stop offset="1" stop-color="#A3D8FF" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <span class="show-dialog-title">Спасибо!</span>
+            <p class="show-dialog-info">
+                Ваша заявка принята, скоро с вами свяжется наш менеджер
+            </p>
+            <button onclick="exitDialog()" style="width: 100%;" class="get__consultation">
+                Вернуться на главную
+            </button>
+        </div>
+    </p-dialog>
 </div>
