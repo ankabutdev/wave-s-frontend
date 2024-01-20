@@ -1,39 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import "primeng/resources/themes/lara-light-blue/theme.css";
-@import "primeng/resources/primeng.css";
-@import "primeicons/primeicons.css";
-
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-/* Document
-   ========================================================================== */
-/**
- * 1. Correct the line height in all browsers.
- * 2. Prevent adjustments of font size after orientation changes in iOS.
- */
-html {
-  line-height: 1.15;
-  /* 1 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/* Sections
-   ========================================================================== */
-/**
- * Remove the margin in all browsers.
- */
-body {
-  margin: 0;
-}
-
-/**
- * Render the `main` element consistently in IE.
- */
-main {
-  display: block;
-}
 
 /**
  * Correct the font size and margin on `h1` elements within `section` and
@@ -669,7 +635,7 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   gap: 100px;
-  background-image: url("/img/intro__img.png");
+  background-image: url("/assets/images/intro__img.png");
   background-size: 645px;
   background-position: right center;
   background-repeat: no-repeat;
@@ -753,7 +719,7 @@ body {
   content: "";
   width: 66px;
   height: 66px;
-  background-image: url("/img/get__consultation.svg");
+  background-image: url("/assets/images/get__consultation.svg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -845,7 +811,7 @@ body {
   content: "";
   width: 48px;
   height: 48px;
-  background-image: url("/img/intro__image__arrow1.svg");
+  background-image: url("/assets/images/intro__image__arrow1.svg");
   background-size: cover;
   background-position: center;
   cursor: pointer;
@@ -855,7 +821,7 @@ body {
   content: "";
   width: 48px;
   height: 48px;
-  background-image: url("/img/intro__image__arrow2.svg");
+  background-image: url("/assets/images/intro__image__arrow2.svg");
   background-size: cover;
   background-position: center;
   cursor: pointer;
@@ -1001,7 +967,7 @@ body {
 }
 
 .advantages__list_four .advantages__item_four:nth-child(2) {
-  background-image: url("/img/adv__four__bg.png");
+  background-image: url("/assets/images/adv__four__bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1363,67 +1329,6 @@ body {
   row-gap: 20px;
 }
 
-/**/
-
-.request_products {
-  padding-top: 132px;
-  padding-bottom: 132px;
-}
-
-.request_products .container {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.reqeust_products__header {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  gap: 8px;
-}
-
-.request_products__title {
-  color: var(--white);
-  font-size: 48px;
-  font-weight: 600;
-}
-
-.request_products__info {
-  color: var(--white);
-  font-size: 24px;
-  font-weight: 500;
-}
-
-.request_products__form__content {
-  margin-top: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
-  align-items: center;
-}
-
-.request_products__form {
-  width: 100%;
-  max-width: 625px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: start;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  -moz-column-gap: 30px;
-  column-gap: 30px;
-  row-gap: 20px;
-}
-
 #fname,
 #tel {
   width: 285px;
@@ -1594,15 +1499,15 @@ body {
 }
 
 .footer__contacts__list .footer__contacts__item:nth-child(1) {
-  background-image: url("/img/footer__contacts1.svg");
+  background-image: url("/assets/images/footer__contacts1.svg");
 }
 
 .footer__contacts__list .footer__contacts__item:nth-child(2) {
-  background-image: url("/img/footer__contacts2.svg");
+  background-image: url("/assets/images/footer__contacts2.svg");
 }
 
 .footer__contacts__list .footer__contacts__item:nth-child(3) {
-  background-image: url("/img/footer__contacts3.svg");
+  background-image: url("/assets/images/footer__contacts3.svg");
 }
 
 .footer__contacts__item {

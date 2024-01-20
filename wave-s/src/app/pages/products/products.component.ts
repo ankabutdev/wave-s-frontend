@@ -38,21 +38,15 @@ export class ProductsComponent {
   }
 
   showDialog: HTMLElement | null = document.getElementById("show__dialog");
-  fullName: HTMLInputElement | null = document.getElementById("fname")?.nodeValue as HTMLInputElement | null;
-  telNum: HTMLInputElement | null = document.getElementById("tel")?.nodeValue as HTMLInputElement | null;
-  comment: HTMLInputElement | null = document.getElementById("comment")?.nodeValue as HTMLInputElement | null;
+  fullName: HTMLInputElement | null = document.getElementById("fname") as HTMLInputElement | null;
+  telNum: HTMLInputElement | null = document.getElementById("tel") as HTMLInputElement | null;
+  comment: HTMLInputElement | null = document.getElementById("comment") as HTMLInputElement | null;
 
   exitDialog() {
     if (this.showDialog) {
       this.showDialog.style.zIndex = "-1";
       this.showDialog.style.opacity = "0";
     }
-  }
-
-  toggleDarkLight() {
-    var body = document.getElementById("body");
-    var currentClass = body!.className;
-    body!.className = currentClass == "light-mode" ? "dark-mode" : "light-mode";
   }
 
   openDialog() {
@@ -67,12 +61,17 @@ export class ProductsComponent {
         TelNum: this.telNum.value,
         Comment: this.comment.value,
       };
-      console.log(commentObject);
+      console.log("Comment object:", commentObject);
 
       this.fullName.value = "";
       this.telNum.value = "";
       this.comment.value = "";
     }
+  }
+  toggleDarkLight() {
+    var body = document.getElementById("body");
+    var currentClass = body!.className;
+    body!.className = currentClass == "light-mode" ? "dark-mode" : "light-mode";
   }
 
   redirectProducts() {
