@@ -1,0 +1,48 @@
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --bg: linear-gradient(100deg, #1b5871 0%, #104f68 101.09%);
+  --lightBg: linear-gradient(100deg, #262626 0%, #3a3a3a 101.09%);
+  --blue: #f8edff;
+  --lightBlue: #f8edff;
+}
+
+// ! DARK MODE STYLING ---------- //////////
+
+//  ! WHEN ITS LIGHT MODE (DEFAULT)
+
+body.dark-mode {
+  background: var(--bg);
+
+  .advantages__item_one,
+  .advantages__list_two .advantages__item_two:nth-child(2),
+  .advantages__item_thr,
+  .advantages__list_four .advantages__item_four:nth-child(1),
+  .partners__list,
+  .products__page__header {
+    background: linear-gradient(180deg, #26627a 0%, #14526b 100%);
+  }
+
+  .footer {
+    background: #17546c;
+  }
+}
+
+//  ! WHEN ITS DARK MODE
+
+body.light-mode {
+  background: var(--lightBg);
+
+  .advantages__item_one,
+  .advantages__list_two .advantages__item_two:nth-child(2),
+  .advantages__item_thr,
+  .advantages__list_four .advantages__item_four:nth-child(1),
+  .partners__list,
+  .products__page__header {
+    background: linear-gradient(180deg, #393939 0%, #2e2e2e 100%);
+  }
+
+  .footer {
+    background: #272727;
+  }
+}

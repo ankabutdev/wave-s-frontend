@@ -1,0 +1,14 @@
+.partners {
+  margin-top: 60px;
+}
+
+.partners__list {
+  margin-top: 30px;
+  @include flex(row);
+  justify-content: space-between;
+  gap: 50px;
+  padding: 50px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: linear-gradient(180deg, #26627a 0%, #14526b 100%);
+}

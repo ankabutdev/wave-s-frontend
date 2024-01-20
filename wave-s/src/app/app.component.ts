@@ -14,23 +14,5 @@ import { BadgeModule } from 'primeng/badge';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  items: MenuItem[] | undefined;
 
-  activeItem: MenuItem | undefined;
-
-  constructor(router: Router) {
-
-  }
-
-  ngOnInit() {
-    this.items = [
-      { label: 'Home', icon: 'pi pi-fw pi-home', },
-      { label: 'Calendar', icon: 'pi pi-fw pi-calendar' },
-      { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
-      { label: 'Documentation', icon: 'pi pi-fw pi-file' },
-      { label: 'Settings', icon: 'pi pi-fw pi-cog' }
-    ];
-
-    this.activeItem = this.items[0];
-  }
 }
