@@ -4,11 +4,13 @@ import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule],
+  imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
+    DialogModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
@@ -37,37 +39,19 @@ export class ProductsComponent {
     return document.querySelector('.loader');
   }
 
-  showDialog: HTMLElement | null = document.getElementById("show__dialog");
-  fullName: HTMLInputElement | null = document.getElementById("fname") as HTMLInputElement | null;
-  telNum: HTMLInputElement | null = document.getElementById("tel") as HTMLInputElement | null;
-  comment: HTMLInputElement | null = document.getElementById("comment") as HTMLInputElement | null;
+  visible: boolean = false;
 
-  exitDialog() {
-    if (this.showDialog) {
-      this.showDialog.style.zIndex = "-1";
-      this.showDialog.style.opacity = "0";
-    }
+  // Method to open the dialog
+  showDialog() {
+    this.visible = true;
   }
 
-  openDialog() {
-    if (this.showDialog) {
-      this.showDialog.style.zIndex = "1";
-      this.showDialog.style.opacity = "1";
-    }
-
-    if (this.fullName && this.telNum && this.comment) {
-      let commentObject = {
-        FullName: this.fullName.value,
-        TelNum: this.telNum.value,
-        Comment: this.comment.value,
-      };
-      console.log("Comment object:", commentObject);
-
-      this.fullName.value = "";
-      this.telNum.value = "";
-      this.comment.value = "";
-    }
+  // Method to close the dialog
+  closeDialog() {
+    this.visible = false;
+    this.router.navigate(['/products']);
   }
+
   toggleDarkLight() {
     var body = document.getElementById("body");
     var currentClass = body!.className;

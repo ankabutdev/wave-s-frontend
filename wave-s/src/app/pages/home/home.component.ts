@@ -52,7 +52,7 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   // Method to close the dialog
   closeDialog() {
     this.visible = false;
-    // Add your logic to close the dialog here
+    this.router.navigate(['/products']);
   }
 
   toggleDarkLight() {
