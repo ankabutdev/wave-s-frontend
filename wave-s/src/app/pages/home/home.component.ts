@@ -16,7 +16,6 @@ import { Router } from '@angular/router';
 })
 
 export class HomeComponent implements AfterViewInit, OnDestroy {
-  title = "wave-s";
   loaderOpacity = 1;
   loaderVisibility = 'visible';
 
@@ -45,19 +44,15 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
   comment: HTMLInputElement | null = document.getElementById("comment") as HTMLInputElement | null;
 
   exitDialog() {
+    console.log("Exiting dialog");
     if (this.showDialog) {
       this.showDialog.style.zIndex = "-1";
       this.showDialog.style.opacity = "0";
     }
   }
 
-  toggleDarkLight() {
-    var body = document.getElementById("body");
-    var currentClass = body!.className;
-    body!.className = currentClass == "light-mode" ? "dark-mode" : "light-mode";
-  }
-
   openDialog() {
+    console.log("Opening dialog");
     if (this.showDialog) {
       this.showDialog.style.zIndex = "1";
       this.showDialog.style.opacity = "1";
@@ -69,14 +64,18 @@ export class HomeComponent implements AfterViewInit, OnDestroy {
         TelNum: this.telNum.value,
         Comment: this.comment.value,
       };
-      console.log(commentObject);
+      console.log("Comment object:", commentObject);
 
       this.fullName.value = "";
       this.telNum.value = "";
       this.comment.value = "";
     }
   }
-
+  toggleDarkLight() {
+    var body = document.getElementById("body");
+    var currentClass = body!.className;
+    body!.className = currentClass == "light-mode" ? "dark-mode" : "light-mode";
+  }
   redirectProducts() {
     this.router.navigate(['/products']);
   }
