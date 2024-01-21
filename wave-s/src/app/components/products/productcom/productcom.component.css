@@ -3,7 +3,8 @@
     /* width: 370px; */
     height: 410px; 
     overflow: hidden;
-    border-radius: 10px;
+    display: flex;
+    /* border-radius: 10px; */
 }
 /* .partners__list {
     margin-top: 30px;
