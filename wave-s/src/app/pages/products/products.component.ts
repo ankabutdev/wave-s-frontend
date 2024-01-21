@@ -9,6 +9,7 @@ import { ProductService } from '../../../services/prodcuts/product.service';
 import { ProductcomComponent } from '../../components/products/productcom/productcom.component';
 import { Product } from '../../../interfaces/products';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { UserService } from '../../../services/users/user.service';
 
 @Component({
   selector: 'app-products',
@@ -35,7 +36,8 @@ export class ProductsComponent implements OnInit {
   // });
 
   constructor(private renderer: Renderer2, private router: Router,
-    private productService: ProductService, private fb: FormBuilder) {
+    private productService: ProductService, private fb: FormBuilder,
+    private userService: UserService) {
     this.applyForm = this.fb.group({
       fullName: ['', Validators.required],
       phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
@@ -58,7 +60,7 @@ export class ProductsComponent implements OnInit {
     this.loaderTimeout = setTimeout(() => {
       this.renderer.setStyle(this.loader, 'opacity', '0');
       this.renderer.setStyle(this.loader, 'visibility', 'hidden');
-    }, 200);
+    }, 500);
   }
 
   ngOnDestroy() {
@@ -73,7 +75,7 @@ export class ProductsComponent implements OnInit {
 
   // Method to open the dialog
   async proccess() {
-    (await this.productService.createUser(this.applyForm.getRawValue()))
+    (await this.userService.createUser(this.applyForm.getRawValue()))
       .subscribe((response: any) => {
         console.log('Post successful', response);
       });

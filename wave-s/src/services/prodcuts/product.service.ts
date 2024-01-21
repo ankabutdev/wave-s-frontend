@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Product } from "../../interfaces/products";
 import { Observable, catchError } from "rxjs";
-import { CreateUser } from "../users/user.service";
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +29,4 @@ export class ProductService {
     return await this.http.get<Product>(this.url + "/" + id);
   }
 
-  async createUser(data: CreateUser): Promise<Observable<any>> {
-    return await this.http.post(this.url2, data);
-  }
 }

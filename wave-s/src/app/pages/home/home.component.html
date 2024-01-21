@@ -2,20 +2,20 @@
     <!-- ! JUST WRAPPER  -->
     <div class="atom">
         <!-- ! LOADER SECTION  -->
-        <!-- <div class="loader">
-            <div class="loadingio-eclipse">
-                <div class="ldio-rpinwye8j0b">
-                    <div></div>
-                </div>
-            </div>
-        </div> -->
-        <div class="loader" [ngStyle]="{ 'opacity': loaderOpacity, 'visibility': loaderVisibility }">
+        <div class="loader">
             <div class="loadingio-eclipse">
                 <div class="ldio-rpinwye8j0b">
                     <div></div>
                 </div>
             </div>
         </div>
+        <!-- <div class="loader" [ngStyle]="{ 'opacity': loaderOpacity, 'visibility': loaderVisibility }">
+            <div class="loadingio-eclipse">
+                <div class="ldio-rpinwye8j0b">
+                    <div></div>
+                </div>
+            </div>
+        </div> -->
         <!-- ! HEADER SECTION  -->
         <header class="header">
             <div class="container">
@@ -72,7 +72,7 @@
                                         d="M3.5 20C3.1 20 2.75 19.85 2.45 19.55C2.15 19.25 2 18.9 2 18.5V5.5C2 5.1 2.15 4.75 2.45 4.45C2.75 4.15 3.1 4 3.5 4H20.5C20.9 4 21.25 4.15 21.55 4.45C21.85 4.75 22 5.1 22 5.5V18.5C22 18.9 21.85 19.25 21.55 19.55C21.25 19.85 20.9 20 20.5 20H3.5ZM12 12.45L3.5 6.875V18.5H20.5V6.875L12 12.45ZM12 10.95L20.4 5.5H3.625L12 10.95ZM3.5 6.875V5.5V18.5V6.875Z"
                                         fill="#0C91FC" />
                                 </svg>
-                                Info#&64moyka-wave.ru
+                                Info&#64;moyka-wave.ru
                             </a>
                         </li>
                     </ul>
@@ -122,7 +122,7 @@
                                 </g>
                             </svg>
                         </button> -->
-                        <a href="#request" class="order__call" id="order__call">
+                        <a href="home#request" class="order__call" id="order__call">
                             Заказать звонок
                         </a>
                     </div>
@@ -161,7 +161,7 @@
                                 Короткие сроки
                             </li>
                         </ul>
-                        <a href="#request" class="get__consultation">Получить консультацию</a>
+                        <a href="home#request" class="get__consultation">Получить консультацию</a>
                         <ul class="intro__blogs__list">
                             <li class="intro__blogs__item">
                                 <div class="intro__blogs__image">
@@ -436,7 +436,7 @@
                                     </div>
                                 </div>
                                 <div class="products__price">
-                                    <a href="#request" class="products__price__link">
+                                    <a href="home#request" class="products__price__link">
                                         Запросить цену
                                     </a>
                                 </div>
@@ -500,7 +500,7 @@
                                 </div>
                                 <div class="products__price">
                                     <span class="products__price__cost"> 660 000 ₽ </span>
-                                    <a href="#request" class="products__price__link products__order__link">
+                                    <a href="home#request" class="products__price__link products__order__link">
                                         Заказать
                                     </a>
                                 </div>
@@ -568,7 +568,7 @@
                                 </div>
                                 <div class="products__price">
                                     <span class="products__price__cost"> 587 000 ₽ </span>
-                                    <a href="#request" class="products__price__link products__order__link">
+                                    <a href="home#request" class="products__price__link products__order__link">
                                         Заказать
                                     </a>
                                 </div>
@@ -711,10 +711,13 @@
                         </p>
                     </div>
                     <div class="request__form__content">
-                        <form action="/action_page.php" method="post" class="request__form">
-                            <input type="text" id="fname" name="fname" placeholder="Введите ваше имя" required />
-                            <input type="tel" name="tel" id="tel" placeholder="Введите ваш телефон" required />
-                            <input type="text" name="comment" id="comment" placeholder="Комментарий" required />
+                        <form action="/action_page.php" [formGroup]="applyForm" class="request__form">
+                            <input type="text" id="fname" formControlName="fullName" placeholder="Введите ваше имя"
+                                required />
+                            <input type="text" formControlName="phoneNumber" id="tel" placeholder="+998941234567"
+                                required />
+                            <input type="text" formControlName="description" id="comment" placeholder="Комментарий"
+                                required />
                         </form>
                         <button (click)="showDialog()" class="get__consultation">
                             Получить консультацию
@@ -811,7 +814,7 @@
                             <li class="footer__contacts__item">
                                 <span class="footer__contacts__info">Почта:</span>
                                 <span class="footer__contacts__text">
-                                    Info#&64moyka-wave.ru
+                                    Info&#64;moyka-wave.ru
                                 </span>
                             </li>
                         </ul>
