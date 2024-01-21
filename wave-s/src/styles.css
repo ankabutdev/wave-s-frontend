@@ -1053,7 +1053,7 @@ body {
 }
 
 .products__item {
-  height: 901px;
+  height: 950px;
   display: flex;
   flex-direction: column;
   align-items: start;
