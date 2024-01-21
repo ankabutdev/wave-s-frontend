@@ -1,4 +1,4 @@
-scripts// ! DARK MODE CODES
+// ! DARK MODE CODES
 
 function toggleDarkLight() {
     var body = document.getElementById("body");

@@ -1,28 +1,46 @@
-import { Component, Renderer2, AfterViewInit, OnDestroy, OnInit } from '@angular/core';
+import { Component, Renderer2, AfterViewInit, OnDestroy, OnInit, Input } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { DialogModule } from 'primeng/dialog';
+import { ProductService } from '../../../services/prodcuts/product.service';
+import { ProductcomComponent } from '../../components/products/productcom/productcom.component';
+import { Product } from '../../../interfaces/products';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
   standalone: true,
   imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
-    DialogModule],
+    DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
 
-  title = "wave-s";
   loaderOpacity = 1;
   loaderVisibility = 'visible';
 
   private loaderTimeout: any;
 
-  constructor(private renderer: Renderer2, private router: Router) { }
+  productList: Product[] = [];
+
+  constructor(private renderer: Renderer2, private router: Router,
+    private productService: ProductService) {
+  }
+
+  async ngOnInit() {
+    await this.GetAllProducts();
+  }
+
+  private async GetAllProducts() {
+    (await this.productService.getAllProducts()).subscribe(response => {
+      this.productList = response;
+      console.log('get successful', this.productList);
+    });
+  }
 
   ngAfterViewInit() {
     this.loaderTimeout = setTimeout(() => {
@@ -39,10 +57,21 @@ export class ProductsComponent {
     return document.querySelector('.loader');
   }
 
+  applyForm = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    phoneNumber: new FormControl('', Validators.required),
+    comment: new FormControl('', Validators.required),
+  });
+
   visible: boolean = false;
 
   // Method to open the dialog
-  showDialog() {
+  async showDialog() {
+    //this.productService.
+    (await this.productService.createUser(this.applyForm.getRawValue()))
+      .subscribe((response: any) => {
+        console.log('Post successful', response);
+      });
     this.visible = true;
   }
 

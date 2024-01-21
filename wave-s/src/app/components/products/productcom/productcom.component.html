@@ -1,0 +1,73 @@
+<section>
+    <li class="products__item">
+        <div class="products__maincontent">
+            <div class="products__image">
+                <img [src]="data.imagePath | imageUrl" alt="Products" class="products__img" />
+            </div>
+            <h3 class="products__title">
+                {{data.name}}
+            </h3>
+            <div class="products__type">
+                <span class="products__type__span">Тип:</span>
+                <p class="products__type__info">{{data.type}}</p>
+            </div>
+            <div class="products__details">
+                <ul class="products__details__list">
+                    <li class="products__details__item">
+                        <span>Корпус:</span>
+                        {{data.frame}}
+                    </li>
+                    <li class="products__details__item">
+                        <span>Монтируется:</span>
+                        {{data.mounted}}
+                    </li>
+                    <li class="products__details__item">
+                        <span>Экран:</span>
+                        {{data.screen}}
+                    </li>
+                    <li class="products__details__item">
+                        <span>Кнопки:</span>
+                        {{data.buttons}}
+                    </li>
+                    <li class="products__details__item">
+                        <span>Подсветка:</span>
+                        {{data.backlight}}
+                    </li>
+                    <li class="products__details__item">
+                        <span>Подсветка:</span>
+                        {{data.weight}}
+                    </li>
+                </ul>
+            </div>
+            <div class="products__payments">
+                <h4 class="products__payments__subtitle">
+                    Функционал
+                </h4>
+                <ul class="products__payments__list">
+                    <li class="products__payments__item">
+                        <span>Пена: </span>
+                        {{data.foam}}
+                    </li>
+                    <li class="products__payments__item">
+                        <span>Воск: </span>
+                        {{data.mum}}
+                    </li>
+                    <li class="products__payments__item">
+                        <span>Умная пауза: </span>
+                        {{data.smartpause}}
+                    </li>
+                    <li class="products__payments__item">
+                        <span>Турбо-давление: </span>
+                        {{data.turbopressure}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="products__price">
+            <span class="products__price__cost"> {{data.price}} $ </span>
+            <a href="products#request" class="products__price__link products__order__link">
+                Заказать
+            </a>
+        </div>
+    </li>
+</section>
