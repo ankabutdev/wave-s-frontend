@@ -1,4 +1,4 @@
-import { Component, Renderer2, AfterViewInit, OnDestroy, OnInit } from '@angular/core';
+import { Component, Renderer2, AfterViewInit, OnDestroy, OnInit, ɵɵqueryRefresh } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
@@ -98,5 +98,9 @@ export class HomeComponent {
   }
   redirectProducts() {
     this.router.navigate(['/products']);
+  }
+
+  redirectToHome() {
+    this.router.navigate(['/home']);
   }
 }
