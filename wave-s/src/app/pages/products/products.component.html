@@ -262,11 +262,12 @@
                 </div>
                 <div class="request__form__content">
                     <form action="/action_page.php" [formGroup]="applyForm" class="request__form">
-                        <input type="text" id="fname" formControlName="firstName" placeholder="Введите ваше имя"
+                        <input type="text" id="fname" formControlName="fullName" placeholder="Введите ваше имя"
                             required />
-                        <input type="tel" formControlName="phoneNumber" id="tel" placeholder="Введите ваш телефон"
+                        <input type="text" formControlName="phoneNumber" id="tel" placeholder="+998941234567"
                             required />
-                        <input type="text" formControlName="comment" id="comment" placeholder="Комментарий" required />
+                        <input type="text" formControlName="description" id="comment" placeholder="Комментарий"
+                            required />
                     </form>
                     <button (click)="showDialog()" class="get__consultation">
                         Получить консультацию

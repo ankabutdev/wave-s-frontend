@@ -8,15 +8,13 @@ import { CreateUser } from "../users/user.service";
   providedIn: 'root'
 })
 export class ProductService {
-  /**
-   *
-   */
+
   constructor(private http: HttpClient) {
 
   }
 
   url = 'http://localhost:5120/api/products';
-  url2 = 'http://localhost:5285/products';
+  url2 = 'http://localhost:5285/users';
 
   async getAllProducts() {
     return await this.http.get<Product[]>(this.url)
@@ -31,10 +29,6 @@ export class ProductService {
   async getById(id: number) {
     return await this.http.get<Product>(this.url + "/" + id);
   }
-
-  // async submitApplication(firstName: string, lastName: string, email: string) {
-  //   // await console.log(firstName, lastName, email);
-  // }
 
   async createUser(data: CreateUser): Promise<Observable<any>> {
     return await this.http.post(this.url2, data);

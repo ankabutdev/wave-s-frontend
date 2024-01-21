@@ -13,8 +13,4 @@ import { ImageUrlPipe } from '../../../pipes/image-url-pipe';
 export class ProductcomComponent {
   @Input()
   data!: Product;
-
-  constructor() {
-    console.log(this.data);
-  }
 }

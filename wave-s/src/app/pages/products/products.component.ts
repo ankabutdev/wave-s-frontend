@@ -8,7 +8,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ProductService } from '../../../services/prodcuts/product.service';
 import { ProductcomComponent } from '../../components/products/productcom/productcom.component';
 import { Product } from '../../../interfaces/products';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-products',
@@ -27,8 +27,20 @@ export class ProductsComponent implements OnInit {
 
   productList: Product[] = [];
 
+  applyForm: FormGroup;
+  // applyForm = new FormGroup({
+  //   fullName: new FormControl('', Validators.required),
+  //   phoneNumber: new FormControl('', [Validators.required, this.phoneNumberValidator]),
+  //   description: new FormControl('', Validators.required),
+  // });
+
   constructor(private renderer: Renderer2, private router: Router,
-    private productService: ProductService) {
+    private productService: ProductService, private fb: FormBuilder) {
+    this.applyForm = this.fb.group({
+      fullName: ['', Validators.required],
+      phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
+      description: ['', Validators.required],
+    });
   }
 
   async ngOnInit() {
@@ -57,24 +69,38 @@ export class ProductsComponent implements OnInit {
     return document.querySelector('.loader');
   }
 
-  applyForm = new FormGroup({
-    firstName: new FormControl('', Validators.required),
-    phoneNumber: new FormControl('', Validators.required),
-    comment: new FormControl('', Validators.required),
-  });
-
   visible: boolean = false;
 
   // Method to open the dialog
-  async showDialog() {
-    //this.productService.
+  async proccess() {
     (await this.productService.createUser(this.applyForm.getRawValue()))
       .subscribe((response: any) => {
         console.log('Post successful', response);
       });
+
     this.visible = true;
   }
 
+  // Custom validator for phone number format
+  phoneNumberValidator(control: AbstractControl<any, any>) {
+    const phoneNumberPattern = /^\+(?:[0-9] ?){6,14}[0-9]$/; // Adjust the pattern based on your requirements
+    const isValid = phoneNumberPattern.test(control.value);
+    return isValid ? null : { invalidPhoneNumber: true };
+  }
+
+  async showDialog() {
+    // Check if the phone number format is valid before proceeding
+    const phoneNumberControl = this.applyForm.get('phoneNumber');
+    if (phoneNumberControl && phoneNumberControl.value) {
+      const isValidFormat = this.phoneNumberValidator(phoneNumberControl);
+      if (isValidFormat !== null) {
+        console.log('Invalid phone number format');
+        return;
+      } else {
+        await this.proccess();
+      }
+    }
+  }
   // Method to close the dialog
   closeDialog() {
     this.visible = false;
