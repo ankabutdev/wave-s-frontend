@@ -12,7 +12,7 @@ export class ProductService {
 
   }
 
-  url = 'http://localhost:5120/api/products';
+  url = 'http://localhost:5285/products';
   url2 = 'http://localhost:5285/users';
 
   async getAllProducts() {
