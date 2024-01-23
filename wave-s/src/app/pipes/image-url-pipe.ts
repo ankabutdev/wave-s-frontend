@@ -7,7 +7,7 @@ import { environment } from "../../environment/environment";
 })
 export class ImageUrlPipe implements PipeTransform {
     transform(value: string): string {
-        var url = "http://localhost:5120"
+        var url = "http://185.217.131.163:5120"
         return `${url}\\${value}`
     }
 }

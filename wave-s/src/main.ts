@@ -14,7 +14,9 @@ bootstrapApplication(AppComponent, {
     importProvidersFrom(HttpClient),
     importProvidersFrom(BrowserAnimationsModule),
     importProvidersFrom(ErrorStateMatcher),
-    importProvidersFrom(ShowOnDirtyErrorStateMatcher)
+    importProvidersFrom(ShowOnDirtyErrorStateMatcher),
+    importProvidersFrom(XMLHttpRequest),
+    importProvidersFrom(ProgressEvent)
   ]
 })
   .catch((err) => console.error(err));

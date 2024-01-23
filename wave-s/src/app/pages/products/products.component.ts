@@ -10,6 +10,8 @@ import { ProductcomComponent } from '../../components/products/productcom/produc
 import { Product } from '../../../interfaces/products';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
+import { timeout } from 'rxjs/operators';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -26,7 +28,7 @@ export class ProductsComponent implements OnInit {
 
   private loaderTimeout: any;
 
-  productList: Product[] = [];
+  productList: Product[] | undefined = [];
 
   applyForm: FormGroup;
   // applyForm = new FormGroup({
@@ -46,7 +48,11 @@ export class ProductsComponent implements OnInit {
   }
 
   async ngOnInit() {
-    await this.GetAllProducts();
+    try {
+      await this.GetAllProducts();
+    } catch (error) {
+      console.error('Error getting products:', error);
+    }
   }
 
   private async GetAllProducts() {
@@ -54,13 +60,46 @@ export class ProductsComponent implements OnInit {
       this.productList = response;
       console.log('get successful', this.productList);
     });
+
+    // try {
+    //   // Set the timeout limit to 600 milliseconds
+    //   const timeoutLimit = 600000;
+
+    //   // Use the timer function to create an observable that emits after the specified time
+    //   const timeoutObservable = timer(timeoutLimit);
+
+    //   // Use the switchMap operator to switch to the timeout observable if the original observable takes too long
+    //   const combinedObservable = (await this.productService.getAllProducts()).pipe(
+    //     timeout(timeoutLimit),
+    //   );
+
+    //   // Subscribe to the combined observable
+    //   const response = await combinedObservable.toPromise();
+
+    //   // Handle the response as needed
+    //   if (Array.isArray(response)) {
+    //     this.productList = response;
+    //     console.log('Get successful', this.productList);
+    //   } else {
+    //     console.error('Invalid response format:', response);
+    //   }
+    // } catch (error) {
+    //   // Handle the timeout error or other errors
+    //   console.error('Timeout or error getting products:', error);
+    // }
   }
 
-  ngAfterViewInit() {
+  async ngAfterViewInit() {
+    // try {
+    //   await this.GetAllProducts();
+    // } catch (error) {
+    //   console.error('Error getting products:', error);
+    // }
     this.loaderTimeout = setTimeout(() => {
       this.renderer.setStyle(this.loader, 'opacity', '0');
       this.renderer.setStyle(this.loader, 'visibility', 'hidden');
     }, 500);
+
   }
 
   ngOnDestroy() {
