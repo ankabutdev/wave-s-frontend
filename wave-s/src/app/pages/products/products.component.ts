@@ -1,4 +1,4 @@
-import { Component, Renderer2, AfterViewInit, OnDestroy, OnInit, Input } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
@@ -8,10 +8,8 @@ import { DialogModule } from 'primeng/dialog';
 import { ProductService } from '../../../services/prodcuts/product.service';
 import { ProductcomComponent } from '../../components/products/productcom/productcom.component';
 import { Product } from '../../../interfaces/products';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
-import { timeout } from 'rxjs/operators';
-import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-products',
@@ -21,16 +19,16 @@ import { timer } from 'rxjs';
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
 
-  loaderOpacity = 1;
-  loaderVisibility = 'visible';
+  // loaderOpacity = 1;
+  // loaderVisibility = 'visible';
 
-  private loaderTimeout: any;
+  // private loaderTimeout: any;
 
   productList: Product[] | undefined = [];
 
-  applyForm: FormGroup;
+  applyForm!: FormGroup;
   // applyForm = new FormGroup({
   //   fullName: new FormControl('', Validators.required),
   //   phoneNumber: new FormControl('', [Validators.required, this.phoneNumberValidator]),
@@ -40,6 +38,12 @@ export class ProductsComponent implements OnInit {
   constructor(private renderer: Renderer2, private router: Router,
     private productService: ProductService, private fb: FormBuilder,
     private userService: UserService) {
+
+    this.GetAllProducts();
+    this.applyForms();
+  }
+
+  private applyForms() {
     this.applyForm = this.fb.group({
       fullName: ['', Validators.required],
       phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
@@ -47,19 +51,16 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  async ngOnInit() {
-    try {
-      await this.GetAllProducts();
-    } catch (error) {
-      console.error('Error getting products:', error);
-    }
-  }
-
-  private async GetAllProducts() {
-    (await this.productService.getAllProducts()).subscribe(response => {
-      this.productList = response;
-      console.log('get successful', this.productList);
-    });
+  private GetAllProducts() {
+    this.productService.getAllProducts().subscribe(
+      response => {
+        this.productList = response;
+        console.log('get successful', this.productList);
+      },
+      error => {
+        console.error('Error fetching products:', error);
+      }
+    );
 
     // try {
     //   // Set the timeout limit to 600 milliseconds
@@ -89,26 +90,26 @@ export class ProductsComponent implements OnInit {
     // }
   }
 
-  async ngAfterViewInit() {
-    // try {
-    //   await this.GetAllProducts();
-    // } catch (error) {
-    //   console.error('Error getting products:', error);
-    // }
-    this.loaderTimeout = setTimeout(() => {
-      this.renderer.setStyle(this.loader, 'opacity', '0');
-      this.renderer.setStyle(this.loader, 'visibility', 'hidden');
-    }, 500);
+  // ngAfterViewInit() {
+  // try {
+  //   await this.GetAllProducts();
+  // } catch (error) {
+  //   console.error('Error getting products:', error);
+  // }
+  // this.loaderTimeout = setTimeout(() => {
+  //   this.renderer.setStyle(this.loader, 'opacity', '0');
+  //   this.renderer.setStyle(this.loader, 'visibility', 'hidden');
+  // }, 500);
 
-  }
+  // }
 
-  ngOnDestroy() {
-    clearTimeout(this.loaderTimeout);
-  }
+  // ngOnDestroy() {
+  //   clearTimeout(this.loaderTimeout);
+  // }
 
-  private get loader(): HTMLElement | null {
-    return document.querySelector('.loader');
-  }
+  // private get loader(): HTMLElement | null {
+  //   return document.querySelector('.loader');
+  // }
 
   visible: boolean = false;
 

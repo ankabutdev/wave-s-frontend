@@ -8,6 +8,12 @@ import bootstrap from './src/main.server';
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
   const server = express();
+
+  // server.use(function (req, res, next) {
+  //   res.header("Access-Control-Allow-Origin", "*");
+  //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  //   next();
+  // });
   const serverDistFolder = dirname(fileURLToPath(import.meta.url));
   const browserDistFolder = resolve(serverDistFolder, '../browser');
   const indexHtml = join(serverDistFolder, 'index.server.html');
@@ -48,6 +54,7 @@ function run(): void {
 
   // Start up the Node server
   const server = app();
+
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
