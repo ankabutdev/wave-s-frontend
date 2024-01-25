@@ -1,4 +1,17 @@
 
+.products__item {
+    height: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    border-radius: 10px;
+    border: 1px solid #013a51;
+    background: var(--white);
+  }
+
 .products__image {
     /* width: 370px; */
     height: 410px; 

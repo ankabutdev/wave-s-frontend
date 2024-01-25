@@ -21,10 +21,10 @@ import { UserService } from '../../../services/users/user.service';
 })
 export class ProductsComponent {
 
-  // loaderOpacity = 1;
-  // loaderVisibility = 'visible';
+  loaderOpacity = 1;
+  loaderVisibility = 'visible';
 
-  // private loaderTimeout: any;
+  private loaderTimeout: any;
 
   productList: Product[] | undefined = [];
 
@@ -90,26 +90,26 @@ export class ProductsComponent {
     // }
   }
 
-  // ngAfterViewInit() {
-  // try {
-  //   await this.GetAllProducts();
-  // } catch (error) {
-  //   console.error('Error getting products:', error);
-  // }
-  // this.loaderTimeout = setTimeout(() => {
-  //   this.renderer.setStyle(this.loader, 'opacity', '0');
-  //   this.renderer.setStyle(this.loader, 'visibility', 'hidden');
-  // }, 500);
+  async ngAfterViewInit() {
+    try {
+      await this.GetAllProducts();
+    } catch (error) {
+      console.error('Error getting products:', error);
+    }
+    this.loaderTimeout = setTimeout(() => {
+      this.renderer.setStyle(this.loader, 'opacity', '0');
+      this.renderer.setStyle(this.loader, 'visibility', 'hidden');
+    }, 500);
 
-  // }
+  }
 
-  // ngOnDestroy() {
-  //   clearTimeout(this.loaderTimeout);
-  // }
+  ngOnDestroy() {
+    clearTimeout(this.loaderTimeout);
+  }
 
-  // private get loader(): HTMLElement | null {
-  //   return document.querySelector('.loader');
-  // }
+  private get loader(): HTMLElement | null {
+    return document.querySelector('.loader');
+  }
 
   visible: boolean = false;
 

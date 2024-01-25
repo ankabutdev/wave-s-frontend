@@ -40,34 +40,16 @@
                 </ul>
             </div>
             <div class="products__payments">
-                <h4 class="products__payments__subtitle">
-                    Функционал
-                </h4>
-                <ul class="products__payments__list">
-                    <li class="products__payments__item">
-                        <span>Пена: </span>
-                        {{data.foam}}
-                    </li>
-                    <li class="products__payments__item">
-                        <span>Воск: </span>
-                        {{data.mum}}
-                    </li>
-                    <li class="products__payments__item">
-                        <span>Умная пауза: </span>
-                        {{data.smartpause}}
-                    </li>
-                    <li class="products__payments__item">
-                        <span>Турбо-давление: </span>
-                        {{data.turbopressure}}
-                    </li>
-                </ul>
+                <h1 class="products__payments__subtitle">
+                    <a [routerLink]="['/details', data.id]">Показать все функции</a>
+                </h1>
             </div>
-        </div>
-        <div class="products__price">
-            <span class="products__price__cost"> {{data.price}} $ </span>
-            <a href="products#request" class="products__price__link products__order__link">
-                Заказать
-            </a>
+            <div class="products__price">
+                <span class="products__price__cost"> {{data.price}} $ </span>
+                <a href="products#request" class="products__price__link products__order__link">
+                    Заказать
+                </a>
+            </div>
         </div>
     </li>
 </section>
