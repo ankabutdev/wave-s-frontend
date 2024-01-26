@@ -133,16 +133,17 @@
 
 
 
-
                     <!-- PRODUCT ID -->
-                    <!-- <article>
-                        <h1>Hello</h1>
-                    </article> -->
 
+                    <!-- <div class="product_main_contaier">
 
-                    <div class="group-2085654880-5AB">
-                        <img class="vector-nKV" [src]="product.imagePath | imageUrl" />
+                        <div class="image_div">
+                            <img class="image_div" [src]="product.imagePath | imageUrl" />
+                        </div>
+
                     </div>
+
+
                     <p class="platinum-space-7sZ">Терминал Platinum Space</p>
                     <p class="item--1xw">Платежные системы</p>
                     <p class="item--HvT">Основные характеристики</p>
@@ -304,42 +305,44 @@
                             стоимости вы
                             можете уточнить у наших консультантов по тел. </span>
                         <span class="item-7-495-927-01-21-ZDV-sub-1">+7 (495) 927-01-21</span>
-                    </p>
+                    </p> -->
 
 
 
 
 
+                    <div class="product-container">
+                        <div class="image-info-container">
+                            <div class="image-div">
+                                <img class="product-image" [src]="product.imagePath | imageUrl" alt="Product Image" />
+                            </div>
+                            <div class="product-info">
+                                <p class="platinum-space-7sZ">Терминал Platinum Space</p>
+                                <!-- Add other product information here -->
+                                <!-- ... -->
+                                <p class="item-587-000--CA7">587 000 ₽</p>
+                                <p class="item--V9D">Цена:</p>
+                                <div class="group-2085654884-Bnj">Заказать</div>
+                                <div class="group-2085654911-qsH">Получить консультацию</div>
+                            </div>
+                        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    </div>
+                    <div class="product-details">
+                        <h1 class="item--qeK">О товаре</h1>
+                        <!-- Add other product details here -->
+                        <!-- ... -->
+                        <p class="item-7-495-927-01-21-ZDV description-below">
+                            <span class="item-7-495-927-01-21-ZDV-sub-0">
+                                {{product.description}}
+                                Подробную информацию о терминале и его
+                                финальной
+                                стоимости вы
+                                можете уточнить у наших консультантов по тел.
+                            </span>
+                            <span class="item-7-495-927-01-21-ZDV-sub-1">+7 (495) 927-01-21</span>
+                        </p>
+                    </div>
 
 
 
