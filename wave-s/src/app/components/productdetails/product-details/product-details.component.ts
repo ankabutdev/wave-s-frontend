@@ -123,4 +123,9 @@ export class ProductDetailsComponent {
     this.visible = false;
     this.router.navigate(['/products']);
   }
+
+  redirectConsultation() {
+    let url = `/details/${this.product.id}`;
+    this.router.navigate([url]);
+  }
 }
