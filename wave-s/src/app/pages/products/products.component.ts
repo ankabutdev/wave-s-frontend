@@ -43,16 +43,16 @@ export class ProductsComponent {
     this.applyForms();
   }
 
-  private applyForms() {
-    this.applyForm = this.fb.group({
+  private async applyForms() {
+    this.applyForm = await this.fb.group({
       fullName: ['', Validators.required],
       phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
       description: ['', Validators.required],
     });
   }
 
-  private GetAllProducts() {
-    this.productService.getAllProducts().subscribe(
+  private async GetAllProducts() {
+    (await this.productService.getAllProducts()).subscribe(
       response => {
         this.productList = response;
         console.log('get successful', this.productList);
@@ -61,33 +61,6 @@ export class ProductsComponent {
         console.error('Error fetching products:', error);
       }
     );
-
-    // try {
-    //   // Set the timeout limit to 600 milliseconds
-    //   const timeoutLimit = 600000;
-
-    //   // Use the timer function to create an observable that emits after the specified time
-    //   const timeoutObservable = timer(timeoutLimit);
-
-    //   // Use the switchMap operator to switch to the timeout observable if the original observable takes too long
-    //   const combinedObservable = (await this.productService.getAllProducts()).pipe(
-    //     timeout(timeoutLimit),
-    //   );
-
-    //   // Subscribe to the combined observable
-    //   const response = await combinedObservable.toPromise();
-
-    //   // Handle the response as needed
-    //   if (Array.isArray(response)) {
-    //     this.productList = response;
-    //     console.log('Get successful', this.productList);
-    //   } else {
-    //     console.error('Invalid response format:', response);
-    //   }
-    // } catch (error) {
-    //   // Handle the timeout error or other errors
-    //   console.error('Timeout or error getting products:', error);
-    // }
   }
 
   async ngAfterViewInit() {

@@ -17,8 +17,11 @@ export class ProductService {
   url2 = 'http://localhost:5285/users';
   urlServer = "http://185.217.131.163:5120/api/products";
 
-  getAllProducts() {
-    return this.http.get<Product[]>(this.url)
+  // Only GetAll And GetById
+  urlGateWayServer = "http://185.217.131.163:5285/products"
+
+  async getAllProducts() {
+    return await this.http.get<Product[]>(this.urlGateWayServer)
       .pipe(
         //timeout(600000), // Set timeout to 10 seconds (adjust as needed)
         catchError((error: any) => {
@@ -29,7 +32,7 @@ export class ProductService {
   }
 
   async getById(id: number) {
-    return await this.http.get<Product>(this.url + "/" + id);
+    return await this.http.get<Product>(this.urlGateWayServer + "/" + id);
   }
 
 }
