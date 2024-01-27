@@ -122,7 +122,7 @@
                 <div class="container">
                     <p class="products__page__header__info">
                         <span [routerLink]="'/home'" class="glavniy"> Главная / </span>
-                        <span class="glavniy">Оборудование /</span>
+                        <span [routerLink]="'/products'" class="glavniy">Оборудование /</span>
                         <span class="glavniy"> <strong class="glavniy"> {{product.name}}</strong> </span>
                     </p>
                 </div>
@@ -130,7 +130,7 @@
             <div class="container">
                 <!-- ! PRODUCTS CONTENT  -->
                 <div class="products__page__content">
-                    <!-- PRODUCT ID -->
+                    <!-- PRODUCT BY ID -->
                     <div class="product-container">
                         <div class="image-info-container">
                             <div class="image-div">
@@ -217,13 +217,18 @@
                         <p class="item-7-495-927-01-21-ZDV description-below">
                             <span class="item-7-495-927-01-21-ZDV-sub-0">
                                 <strong>{{product.description}}</strong>
+
+                            </span>
+
+                        </p>
+                        <p> <strong>
                                 Подробную информацию о терминале и его
                                 финальной
                                 стоимости вы
                                 можете уточнить у наших консультантов по тел.
-                            </span>
-                            <span class="item-7-495-927-01-21-ZDV-sub-1">+7 (495) 927-01-21</span>
+                            </strong>
                         </p>
+                        <span class="glavniy">+7 (495) 927-01-21</span>
                     </div>
                 </div>
             </div>
