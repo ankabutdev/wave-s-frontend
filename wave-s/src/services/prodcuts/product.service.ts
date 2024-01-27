@@ -1,8 +1,7 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Product } from "../../interfaces/products";
-import { Observable, catchError, retry, timeout } from "rxjs";
-import { TIMEOUT } from "dns";
+import { catchError } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +20,16 @@ export class ProductService {
   urlGateWayServer = "http://185.217.131.163:5285/products"
 
   async getAllProducts() {
-    return await this.http.get<Product[]>(this.urlGateWayServer)
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Credentials': 'true'
+      })
+    }
+
+    return await this.http.get<Product[]>(this.urlGateWayServer, httpOptions)
       .pipe(
-        //timeout(600000), // Set timeout to 10 seconds (adjust as needed)
         catchError((error: any) => {
           console.error('Error fetching products:', error);
           throw error;

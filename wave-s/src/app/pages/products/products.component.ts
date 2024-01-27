@@ -55,7 +55,7 @@ export class ProductsComponent {
     (await this.productService.getAllProducts()).subscribe(
       response => {
         this.productList = response;
-        console.log('get successful', this.productList);
+        console.log('get successful');
       },
       error => {
         console.error('Error fetching products:', error);
