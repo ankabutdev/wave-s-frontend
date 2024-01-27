@@ -122,8 +122,8 @@
                 <div class="container">
                     <p class="products__page__header__info">
                         <span [routerLink]="'/home'" class="glavniy"> Главная / </span>
-                        <span class="glavniy" >Оборудование /</span>
-                        <span class="glavniy" > <strong class="glavniy" > {{product.name}}</strong> </span>
+                        <span class="glavniy">Оборудование /</span>
+                        <span class="glavniy"> <strong class="glavniy"> {{product.name}}</strong> </span>
                     </p>
                 </div>
             </div>
@@ -137,30 +137,31 @@
                                 <img class="product-image" [src]="product.imagePath | imageUrl" alt="Product Image" />
                             </div>
                             <div class="product-info">
-                                <h1 class="platinum-space-7sZ"> {{product.name}} </h1>
+                                <h1 class="platinum-space-7sZ"> <strong>{{product.name}}</strong> </h1>
                                 <p class="item--1xw">Платежные системы</p>
                                 <p class="item--HvT">Основные характеристики</p>
                                 <p class="item--m4w">Функционал</p>
                                 <p class="item--TCf">
                                     <span class="item--TCf-sub-0">Корпус: </span>
-                                    <span class="item--TCf-sub-1">{{product.frame}}</span>
+                                    <span class="item--TCf-sub-1"><strong>{{product.frame}}</strong> </span>
                                 </p>
                                 <p class="item--pUT">
-                                    <span class="item--pUT-sub-0">Пена: {{product.foam}}</span>
-                                    <span class="item--pUT-sub-1">Густая шапка пены</span>
+                                    <span class="item--pUT-sub-0">Пена: </span>
+                                    <span class="item--pUT-sub-1"><strong>{{product.foam}}</strong> </span>
                                 </p>
                                 <p class="item--rpT">
-                                    <span class="item--rpT-sub-0">Воск: {{product.mum}}</span>
-                                    <span class="item--rpT-sub-1">Блеск и водоотталкивание</span>
+                                    <span class="item--rpT-sub-0">Воск: </span>
+                                    <span class="item--rpT-sub-1"><strong>{{product.mum}}</strong> </span>
                                 </p>
                                 <p class="item--NAX">
-                                    <span class="item--NAX-sub-0">Умная пауза: {{product.smartpause}} </span>
+                                    <span class="item--NAX-sub-0">Умная пауза: <strong>{{product.smartpause}}</strong>
+                                    </span>
                                     <span class="item--NAX-sub-1">Настраиваемая (платная/бесплатная)
-                                        {{product.type}}</span>
+                                        <strong>{{product.type}}</strong></span>
                                 </p>
                                 <p class="item--f39">
-                                    <span class="item--f39-sub-0">Турбо-давление: {{product.turbopressure}}</span>
-                                    <span class="item--f39-sub-1">Возможность увеличить давление струи {{product.mum}}
+                                    <span class="item--f39-sub-0">Турбо-давление: </span>
+                                    <span class="item--f39-sub-1"><strong>{{product.turbopressure}}</strong>
                                     </span>
                                     <span class="item--f39-sub-2">(опция)</span>
                                 </p>
@@ -179,25 +180,25 @@
                                 <p class="item--rDR">Показать все функции</p>
                                 <p class="item--j2K">
                                     <span class="item--j2K-sub-0">Монтируется: </span>
-                                    <span class="item--j2K-sub-1">{{product.mounted}} </span>
+                                    <span class="item--j2K-sub-1"><strong>{{product.mounted}}</strong> </span>
                                 </p>
                                 <p class="touch-43--gbm">
                                     <span class="touch-43--gbm-sub-0">Экран: </span>
-                                    <span class="touch-43--gbm-sub-1">{{product.screen}}</span>
+                                    <span class="touch-43--gbm-sub-1"><strong>{{product.screen}}</strong></span>
                                 </p>
                                 <p class="item--fCo">
                                     <span class="item--fCo-sub-0">Кнопки: </span>
-                                    <span class="item--fCo-sub-1">{{product.buttons}} </span>
+                                    <span class="item--fCo-sub-1"><strong>{{product.buttons}}</strong> </span>
                                 </p>
                                 <p class="item-90-d39">
                                     <span class="item-90-d39-sub-0">Масса (кг): </span>
-                                    <span class="item-90-d39-sub-1"> {{product.weight}} </span>
+                                    <span class="item-90-d39-sub-1"> <strong>{{product.weight}}</strong></span>
                                 </p>
                                 <p class="ambilight--m2s">
                                     <span class="ambilight--m2s-sub-0">Подсветка: </span>
-                                    <span class="ambilight--m2s-sub-1"> {{product.backlight}} </span>
+                                    <span class="ambilight--m2s-sub-1"> <strong>{{product.backlight}}</strong> </span>
                                 </p>
-                                <p class="item--V9D">Цена: {{product.price}} $</p>
+                                <p class="item--V9D">Цена: <strong>{{product.price}}</strong> $</p>
 
                                 <a (click)="redirectConsultation()" class="products__price__link products__order__link">
                                     Заказать
@@ -214,7 +215,7 @@
 
                         <p class="item-7-495-927-01-21-ZDV description-below">
                             <span class="item-7-495-927-01-21-ZDV-sub-0">
-                                {{product.description}}
+                                <strong>{{product.description}}</strong>
                                 Подробную информацию о терминале и его
                                 финальной
                                 стоимости вы
