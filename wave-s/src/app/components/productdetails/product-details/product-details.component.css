@@ -41,7 +41,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px; /* Adjust as needed */
+    margin: 20px;
+    /* Adjust as needed */
 }
 
 .image-info-container {
@@ -60,11 +61,17 @@
 
 .product-info {
     width: 50%;
-    padding: 0 20px; /* Adjust as needed */
+    padding: 0 20px;
+    /* Adjust as needed */
 }
 
 .product-details {
-    margin-top: 20px; /* Adjust as needed */
+    margin-top: 20px;
+    /* Adjust as needed */
+}
+
+.glavniy {
+    font-size: 25px;
 }
 
 /* Add more styles as necessary */

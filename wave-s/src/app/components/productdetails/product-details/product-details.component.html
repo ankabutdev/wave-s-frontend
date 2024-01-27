@@ -122,9 +122,9 @@
                 <div class="container">
                     <p class="products__page__header__info">
                         <span [routerLink]="'/home'" class="glavniy"> Главная / </span>
-                        <span>Оборудование </span>
+                        <span class="glavniy" >Оборудование /</span>
+                        <span class="glavniy" > <strong class="glavniy" > {{product.name}}</strong> </span>
                     </p>
-                    <h1 class="products__page__title">Оборудование</h1>
                 </div>
             </div>
             <div class="container">
@@ -172,26 +172,22 @@
                                     <span class="microcoin-sp-DVu-sub-0">Монетоприемник: </span>
                                     <span class="microcoin-sp-DVu-sub-1">Microcoin SP</span>
                                 </p>
-                                <p class="item--mvj">
-                                    <span class="item--mvj-sub-0">Карты лояльности: </span>
-                                    <span class="item--mvj-sub-1">(в комплекте)</span>
-                                </p>
                                 <p class="item--WWw">
                                     <span class="item--WWw-sub-0">Банковские карты: </span>
                                     <span class="item--WWw-sub-1">(в комплекте)</span>
                                 </p>
                                 <p class="item--rDR">Показать все функции</p>
                                 <p class="item--j2K">
-                                    <span class="item--j2K-sub-0">Монтируется: {{product.mounted}} </span>
-                                    <span class="item--j2K-sub-1">На стену</span>
+                                    <span class="item--j2K-sub-0">Монтируется: </span>
+                                    <span class="item--j2K-sub-1">{{product.mounted}} </span>
                                 </p>
                                 <p class="touch-43--gbm">
-                                    <span class="touch-43--gbm-sub-0">Экран: {{product.screen}}</span>
-                                    <span class="touch-43--gbm-sub-1">Touch 43 дюйма (яркий)</span>
+                                    <span class="touch-43--gbm-sub-0">Экран: </span>
+                                    <span class="touch-43--gbm-sub-1">{{product.screen}}</span>
                                 </p>
                                 <p class="item--fCo">
-                                    <span class="item--fCo-sub-0">Кнопки: {{product.buttons}} </span>
-                                    <span class="item--fCo-sub-1">Сенсорные </span>
+                                    <span class="item--fCo-sub-0">Кнопки: </span>
+                                    <span class="item--fCo-sub-1">{{product.buttons}} </span>
                                 </p>
                                 <p class="item-90-d39">
                                     <span class="item-90-d39-sub-0">Масса (кг): </span>
