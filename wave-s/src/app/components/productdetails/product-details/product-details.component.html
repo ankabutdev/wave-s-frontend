@@ -317,7 +317,7 @@
                                 <img class="product-image" [src]="product.imagePath | imageUrl" alt="Product Image" />
                             </div>
                             <div class="product-info">
-                                <p class="platinum-space-7sZ">Терминал Platinum Space</p>
+                                <h1 class="platinum-space-7sZ"> {{product.name}} </h1>
                                 <p class="item--1xw">Платежные системы</p>
                                 <p class="item--HvT">Основные характеристики</p>
                                 <p class="item--m4w">Функционал</p>
@@ -330,20 +330,22 @@
                                     <span class="item-200--AFV-sub-1">Мощная струя воды (до 200 бар)</span>
                                 </p>
                                 <p class="item--pUT">
-                                    <span class="item--pUT-sub-0">Пена: </span>
+                                    <span class="item--pUT-sub-0">Пена: {{product.foam}}</span>
                                     <span class="item--pUT-sub-1">Густая шапка пены</span>
                                 </p>
                                 <p class="item--rpT">
-                                    <span class="item--rpT-sub-0">Воск: </span>
+                                    <span class="item--rpT-sub-0">Воск: {{product.frame}}</span>
                                     <span class="item--rpT-sub-1">Блеск и водоотталкивание</span>
                                 </p>
                                 <p class="item--NAX">
-                                    <span class="item--NAX-sub-0">Умная пауза: </span>
-                                    <span class="item--NAX-sub-1">Настраиваемая (платная/бесплатная)</span>
+                                    <span class="item--NAX-sub-0">Умная пауза: {{product.smartpause}} </span>
+                                    <span class="item--NAX-sub-1">Настраиваемая (платная/бесплатная)
+                                        {{product.mounted}}</span>
                                 </p>
                                 <p class="item--f39">
-                                    <span class="item--f39-sub-0">Турбо-давление: </span>
-                                    <span class="item--f39-sub-1">Возможность увеличить давление струи </span>
+                                    <span class="item--f39-sub-0">Турбо-давление: {{product.turbopressure}}</span>
+                                    <span class="item--f39-sub-1">Возможность увеличить давление струи {{product.mum}}
+                                    </span>
                                     <span class="item--f39-sub-2">(опция)</span>
                                 </p>
                                 <p class="cashcode-SLj">
@@ -364,20 +366,20 @@
                                 </p>
                                 <p class="item--rDR">Показать все функции</p>
                                 <p class="item--j2K">
-                                    <span class="item--j2K-sub-0">Монтируется: </span>
+                                    <span class="item--j2K-sub-0">Монтируется: {{product.mounted}} </span>
                                     <span class="item--j2K-sub-1">На стену</span>
                                 </p>
                                 <p class="touch-43--gbm">
-                                    <span class="touch-43--gbm-sub-0">Экран: </span>
+                                    <span class="touch-43--gbm-sub-0">Экран: {{product.screen}}</span>
                                     <span class="touch-43--gbm-sub-1">Touch 43 дюйма (яркий)</span>
                                 </p>
                                 <p class="item--fCo">
-                                    <span class="item--fCo-sub-0">Кнопки: </span>
-                                    <span class="item--fCo-sub-1">Сенсорные</span>
+                                    <span class="item--fCo-sub-0">Кнопки: {{product.buttons}} </span>
+                                    <span class="item--fCo-sub-1">Сенсорные </span>
                                 </p>
                                 <p class="item-90-d39">
                                     <span class="item-90-d39-sub-0">Масса (кг): </span>
-                                    <span class="item-90-d39-sub-1">90</span>
+                                    <span class="item-90-d39-sub-1"> {{product.weight}} </span>
                                 </p>
                                 <p class="ambilight--m2s">
                                     <span class="ambilight--m2s-sub-0">Подсветка: </span>
