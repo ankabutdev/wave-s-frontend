@@ -109,6 +109,7 @@ export class ProductsComponent {
     if (phoneNumberControl && phoneNumberControl.value) {
       const isValidFormat = this.phoneNumberValidator(phoneNumberControl);
       if (isValidFormat !== null) {
+        alert("Invalid phone number format!")
         console.log('Invalid phone number format');
         return;
       } else {
