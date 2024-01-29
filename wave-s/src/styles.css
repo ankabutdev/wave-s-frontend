@@ -1665,9 +1665,9 @@ input {
   border: none;
 }
 
-/* body {
-  width: 192rem;
-} */
+body {
+  width: 100%;
+}
 
 .item-3-3Ru {
   width: 100%;
