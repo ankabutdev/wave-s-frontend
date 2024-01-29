@@ -27,6 +27,7 @@ export class ProductsComponent {
   private loaderTimeout: any;
 
   productList: Product[] | undefined = [];
+  selectedCategory!: string | null;
 
   applyForm!: FormGroup;
   // applyForm = new FormGroup({
@@ -135,5 +136,36 @@ export class ProductsComponent {
 
   redirectToHomePage() {
     this.router.navigate(['/home']);
+  }
+
+  changeColor() {
+    var categories = document.getElementById('box');
+    if (categories != null) {
+      categories.style.color = 'var(--white)';
+      categories.style.background = '#0c91fc';
+    }
+
+    /*
+    .products__page__categories__list .products__page__categories__item:nth-child(1) {
+  color: var(--white);
+  background: #0c91fc;
+}
+    */
+  }
+
+  async getProductsByCategory(category: string | null) {
+    if (category !== null) {
+      this.selectedCategory = category;
+      (await this.productService.getProductsByCategory(category)).subscribe(
+        response => {
+          this.productList = response;
+          console.log('Products fetched by category:', category);
+        },
+        error => {
+          console.error('Error fetching products by category:', error);
+        }
+      );
+    }
+    this.GetAllProducts();
   }
 }

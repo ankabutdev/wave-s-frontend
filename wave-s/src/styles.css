@@ -1616,10 +1616,20 @@ body {
   gap: 15px;
 }
 
-.products__page__categories__list .products__page__categories__item:nth-child(1) {
+/* .products__page__categories__list .products__page__categories__item:nth-child(1) {
+  color: var(--white);
+  background: #0c91fc;
+} */
+
+.products__page__categories__list .products__page__categories__item {
+  cursor: pointer;
+}
+
+.products__page__categories__list .products__page__categories__item.active {
   color: var(--white);
   background: #0c91fc;
 }
+
 
 .products__page__categories__item {
   color: #092433;

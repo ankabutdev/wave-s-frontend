@@ -41,4 +41,8 @@ export class ProductService {
     return await this.http.get<Product>(this.urlGateWayServer + "/" + id);
   }
 
+  async getProductsByCategory(categoryName: string) {
+    return await this.http.get<Product[]>(this.urlGateWayServer + "/products/categories/" + categoryName);
+  }
+
 }
