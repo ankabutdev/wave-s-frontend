@@ -135,14 +135,6 @@ export class ProductsComponent {
     this.router.navigate(['/home']);
   }
 
-  changeColor() {
-    var categories = document.getElementById('box');
-    if (categories != null) {
-      categories.style.color = 'var(--white)';
-      categories.style.background = '#0c91fc';
-    }
-  }
-
   async getProductsByCategory(category: string | null) {
     if (category !== null) {
       this.selectedCategory = category;
