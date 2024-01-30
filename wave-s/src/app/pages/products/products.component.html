@@ -133,19 +133,27 @@
 
                     <!-- ! PRODUCTS CATEGORIES  -->
                     <ul class="products__page__categories__list">
-                        <li class="products__page__categories__item" (click)="getProductsByCategory(null)" [class.active]="selectedCategory === null">
+                        <li class="products__page__categories__item" (click)="getProductsByCategory(null)"
+                            [class.active]="selectedCategory === 'Все оборудование'">
                             Все оборудование
                         </li>
-                        <li id="box" class="products__page__categories__item" (click)="getProductsByCategory('Self-service car washes')" [class.active]="selectedCategory === 'Self-service car washes'">
+                        <li id="box" class="products__page__categories__item"
+                            (click)="getProductsByCategory('Self-service car washes')"
+                            [class.active]="selectedCategory === 'Self-service car washes'">
                             Мойки самообслуживания
                         </li>
-                        <li class="products__page__categories__item" (click)="getProductsByCategory('Add. MSO equipment')" [class.active]="selectedCategory === 'Add. MSO equipment'">
+                        <li class="products__page__categories__item"
+                            (click)="getProductsByCategory('Add. MSO equipment')"
+                            [class.active]="selectedCategory === 'Add. MSO equipment'">
                             Доп. оборудование МСО
                         </li>
-                        <li class="products__page__categories__item" (click)="getProductsByCategory('Self-service vacuum cleaners')" [class.active]="selectedCategory === 'Self-service vacuum cleaners'">
+                        <li class="products__page__categories__item"
+                            (click)="getProductsByCategory('Self-service vacuum cleaners')"
+                            [class.active]="selectedCategory === 'Self-service vacuum cleaners'">
                             Пылесосы самообслуживания
                         </li>
-                        <li class="products__page__categories__item" (click)="getProductsByCategory('Other equipment')" [class.active]="selectedCategory === 'Other equipment'">
+                        <li class="products__page__categories__item" (click)="getProductsByCategory('Other equipment')"
+                            [class.active]="selectedCategory === 'Other equipment'">
                             Прочее оборудование
                         </li>
                     </ul>

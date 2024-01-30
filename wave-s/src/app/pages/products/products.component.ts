@@ -51,7 +51,7 @@ export class ProductsComponent {
     (await this.productService.getAllProducts()).subscribe(
       response => {
         this.productList = response;
-        console.log('get successful');
+        console.log('getall successful');
       },
       error => {
         console.error('Error fetching products:', error);
@@ -62,6 +62,7 @@ export class ProductsComponent {
   async ngAfterViewInit() {
     try {
       await this.GetAllProducts();
+      this.selectedCategory = 'Все оборудование';
     } catch (error) {
       console.error('Error getting products:', error);
     }
@@ -110,6 +111,7 @@ export class ProductsComponent {
         return;
       } else {
         await this.proccess();
+        await this.applyForms();
       }
     }
   }
@@ -147,13 +149,16 @@ export class ProductsComponent {
       (await this.productService.getProductsByCategory(category)).subscribe(
         response => {
           this.productList = response;
-          console.log('Products fetched by category:', category);
+          console.log('Successfully', category);
         },
         error => {
-          console.error('Error fetching products by category:', error);
+          console.error('Error', error);
         }
       );
+    } else {
+
+      this.selectedCategory = 'Все оборудование';
+      this.GetAllProducts();
     }
-    this.GetAllProducts();
   }
 }
