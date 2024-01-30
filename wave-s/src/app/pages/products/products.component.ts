@@ -30,11 +30,6 @@ export class ProductsComponent {
   selectedCategory!: string | null;
 
   applyForm!: FormGroup;
-  // applyForm = new FormGroup({
-  //   fullName: new FormControl('', Validators.required),
-  //   phoneNumber: new FormControl('', [Validators.required, this.phoneNumberValidator]),
-  //   description: new FormControl('', Validators.required),
-  // });
 
   constructor(private renderer: Renderer2, private router: Router,
     private productService: ProductService, private fb: FormBuilder,
