@@ -139,13 +139,6 @@ export class ProductsComponent {
       categories.style.color = 'var(--white)';
       categories.style.background = '#0c91fc';
     }
-
-    /*
-    .products__page__categories__list .products__page__categories__item:nth-child(1) {
-  color: var(--white);
-  background: #0c91fc;
-}
-    */
   }
 
   async getProductsByCategory(category: string | null) {
