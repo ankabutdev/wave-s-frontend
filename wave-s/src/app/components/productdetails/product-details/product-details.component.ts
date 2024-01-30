@@ -26,28 +26,6 @@ export class ProductDetailsComponent {
   product!: Product;
   applyForm!: FormGroup;
 
-  // applyForm = new FormGroup({
-  //   name: new FormControl(''),
-  //   categoryId: new FormControl(),
-  //   price: new FormControl(),
-  //   description: new FormControl(''),
-  //   companyId: new FormControl(),
-  //   createdAt: new FormControl(Date.now()),
-  //   updatedAt: new FormControl(Date.now()),
-  //   frame: new FormControl(''),
-  //   mounted: new FormControl(''),
-  //   screen: new FormControl(''),
-  //   buttons: new FormControl(''),
-  //   weight: new FormControl(),
-  //   backlight: new FormControl(''),
-  //   type: new FormControl(''),
-  //   foam: new FormControl(''),
-  //   mum: new FormControl(''),
-  //   smartpause: new FormControl(''),
-  //   turbopressure: new FormControl(''),
-  //   imagePath: new FormControl(''),
-  // })
-
   constructor(private route: ActivatedRoute, private productService: ProductService,
     private router: Router, private fb: FormBuilder, private renderer: Renderer2,
     private userService: UserService) {
