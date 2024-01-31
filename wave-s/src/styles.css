@@ -10,6 +10,10 @@ h1 {
   margin: 0.67em 0;
 }
 
+.cursor-pointer{
+  cursor: pointer;
+}
+
 /* Grouping content
    ========================================================================== */
 /**
@@ -678,7 +682,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: start;
   justify-content: center;
   width: 80px;
   height: 80px;

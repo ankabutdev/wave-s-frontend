@@ -69,7 +69,8 @@
             <!-- ! HEADER CONTENT-NAVBAR SECTION  -->
             <div class="header__content">
                 <div class="header__navbar">
-                    <img src="../../../assets/images/logo.svg" alt="Logo Site" (click)="redirectToHomePage()" />
+                    <img src="../../../assets/images/logo.svg" alt="Logo Site" (click)="redirectToHomePage()"
+                        class="cursor-pointer" />
                     <ul class="header__navbar__list">
                         <li class="header__navbar__item">
                             <a href="products#" class="header__navbar__link">Оборудование</a>
@@ -121,8 +122,8 @@
             <div class="products__page__header">
                 <div class="container">
                     <p class="products__page__header__info">
-                        <span [routerLink]="'/home'" class="glavniy"> Главная / </span>
-                        <span>Оборудование </span>
+                        <span [routerLink]="'/home'" class="glavniy" class="cursor-pointer"> Главная / </span>
+                        <span class="cursor-pointer">Оборудование </span>
                     </p>
                     <h1 class="products__page__title">Оборудование</h1>
                 </div>
