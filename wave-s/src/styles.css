@@ -639,7 +639,7 @@ body {
   align-items: flex-end;
   justify-content: space-between;
   gap: 100px;
-  background-image: url("/assets/images/intro__img.png");
+  background-image: url("./assets/images/intro__img.png");
   background-size: 645px;
   background-position: right center;
   background-repeat: no-repeat;
@@ -814,7 +814,7 @@ body {
   content: "";
   width: 48px;
   height: 48px;
-  background-image: url("/assets/images/intro__image__arrow1.svg");
+  background-image: url("./assets/images/intro__image__arrow1.svg");
   background-size: cover;
   background-position: center;
   cursor: pointer;
@@ -824,7 +824,7 @@ body {
   content: "";
   width: 48px;
   height: 48px;
-  background-image: url("/assets/images/intro__image__arrow2.svg");
+  background-image: url("./assets/images/intro__image__arrow2.svg");
   background-size: cover;
   background-position: center;
   cursor: pointer;
@@ -970,7 +970,7 @@ body {
 }
 
 .advantages__list_four .advantages__item_four:nth-child(2) {
-  background-image: url("/assets/images/adv__four__bg.png");
+  background-image: url("./assets/images/adv__four__bg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1502,15 +1502,15 @@ body {
 }
 
 .footer__contacts__list .footer__contacts__item:nth-child(1) {
-  background-image: url("/assets/images/footer__contacts1.svg");
+  background-image: url("./assets/images/footer__contacts1.svg");
 }
 
 .footer__contacts__list .footer__contacts__item:nth-child(2) {
-  background-image: url("/assets/images/footer__contacts2.svg");
+  background-image: url("./assets/images/footer__contacts2.svg");
 }
 
 .footer__contacts__list .footer__contacts__item:nth-child(3) {
-  background-image: url("/assets/images/footer__contacts3.svg");
+  background-image: url("./assets/images/footer__contacts3.svg");
 }
 
 .footer__contacts__item {
