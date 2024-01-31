@@ -26,17 +26,22 @@ export class HomeComponent {
 
   private loaderTimeout: any;
 
-  applyForm: FormGroup;
+  applyForm!: FormGroup;
 
   constructor(private renderer: Renderer2, private router: Router,
     private dialog: MatDialog, private fb: FormBuilder,
     private userService: UserService) {
-    this.applyForm = this.fb.group({
+    this.applyForms();
+  }
+
+  private async applyForms() {
+    this.applyForm = await this.fb.group({
       fullName: ['', Validators.required],
       phoneNumber: ['', [Validators.required, this.phoneNumberValidator]],
       description: ['', Validators.required],
     });
   }
+
 
   ngAfterViewInit() {
     this.loaderTimeout = setTimeout(() => {
@@ -83,6 +88,7 @@ export class HomeComponent {
         return;
       } else {
         await this.proccess();
+        await this.applyForms();
       }
     }
   }
