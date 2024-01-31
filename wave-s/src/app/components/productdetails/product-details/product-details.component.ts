@@ -1,9 +1,8 @@
 import { Component, Renderer2 } from '@angular/core';
 import { Product } from '../../../../interfaces/products';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProductService } from '../../../../services/prodcuts/product.service';
-import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../services/users/user.service';
 import { DialogModule } from 'primeng/dialog';
@@ -30,11 +29,11 @@ export class ProductDetailsComponent {
     private router: Router, private fb: FormBuilder, private renderer: Renderer2,
     private userService: UserService) {
     const productId = parseInt(this.route.snapshot.params['id'], 10);
-    this.some(productId);
+    this.getProductIdFromUrl(productId);
     this.applyForms();
   }
 
-  async some(productId: number) {
+  private async getProductIdFromUrl(productId: number) {
     (await this.productService.getById(productId)).subscribe(response => {
       this.product = response;
     })
@@ -93,6 +92,7 @@ export class ProductDetailsComponent {
         return;
       } else {
         await this.proccess();
+        await this.applyForms();
       }
     }
   }
