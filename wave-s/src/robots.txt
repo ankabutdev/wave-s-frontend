@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /products/
+Disallow: /home/
+Disallow: /details/*
+
+User-agent: Googlebot
+Disallow:
+User-agent: Googlebot-image
+Disallow:
