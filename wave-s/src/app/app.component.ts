@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProductcomComponent } from './components/products/productcom/productcom.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -19,5 +20,14 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  constructor(private meta: Meta) { }
+
+  ngOnInit() {
+    this.meta.addTags([
+      { name: 'description', content: 'Default meta description for your Angular application' },
+      // Add more default meta tags if needed
+    ]);
+  }
 
 }
