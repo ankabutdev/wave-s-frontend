@@ -10,7 +10,7 @@ h1 {
   margin: 0.67em 0;
 }
 
-.cursor-pointer{
+.cursor-pointer {
   cursor: pointer;
 }
 
@@ -168,7 +168,7 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+  -webkit-appearence: button;
 }
 
 /**
@@ -259,7 +259,7 @@ textarea {
  * 2. Correct the outline style in Safari.
  */
 [type=search] {
-  -webkit-appearance: textfield;
+  -webkit-appearence: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */
@@ -1781,7 +1781,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .wave-s-platinum-space-PZd .wave-s-platinum-space-PZd-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .wave-s-platinum-space-PZd .wave-s-platinum-space-PZd-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .wave-s-platinum-space-PZd .wave-s-platinum-space-PZd-sub-1 {
   font-size: 1.2rem;
@@ -2161,7 +2161,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--TCf .item--TCf-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--TCf .item--TCf-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--TCf .item--TCf-sub-1 {
   font-size: 1.6rem;
@@ -2187,7 +2187,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item-200--AFV .item-200--AFV-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item-200--AFV .item-200--AFV-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item-200--AFV .item-200--AFV-sub-1 {
   font-size: 1.6rem;
@@ -2213,7 +2213,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--pUT .item--pUT-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--pUT .item--pUT-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--pUT .item--pUT-sub-1 {
   font-size: 1.6rem;
@@ -2239,7 +2239,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--rpT .item--rpT-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--rpT .item--rpT-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--rpT .item--rpT-sub-1 {
   font-size: 1.6rem;
@@ -2265,7 +2265,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--NAX .item--NAX-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--NAX .item--NAX-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--NAX .item--NAX-sub-1 {
   font-size: 1.6rem;
@@ -2291,7 +2291,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--f39 .item--f39-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--f39 .item--f39-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--f39 .item--f39-sub-1 {
   font-size: 1.6rem;
@@ -2325,7 +2325,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .cashcode-SLj .cashcode-SLj-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .cashcode-SLj .cashcode-SLj-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .cashcode-SLj .cashcode-SLj-sub-1 {
   font-size: 1.6rem;
@@ -2351,7 +2351,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .microcoin-sp-DVu .microcoin-sp-DVu-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .microcoin-sp-DVu .microcoin-sp-DVu-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .microcoin-sp-DVu .microcoin-sp-DVu-sub-1 {
   font-size: 1.6rem;
@@ -2377,7 +2377,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--mvj .item--mvj-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--mvj .item--mvj-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--mvj .item--mvj-sub-1 {
   font-size: 1.6rem;
@@ -2403,7 +2403,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--WWw .item--WWw-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--WWw .item--WWw-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--WWw .item--WWw-sub-1 {
   font-size: 1.6rem;
@@ -2444,7 +2444,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--j2K .item--j2K-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--j2K .item--j2K-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--j2K .item--j2K-sub-1 {
   font-size: 1.6rem;
@@ -2470,7 +2470,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .touch-43--gbm .touch-43--gbm-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .touch-43--gbm .touch-43--gbm-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .touch-43--gbm .touch-43--gbm-sub-1 {
   font-size: 1.6rem;
@@ -2496,7 +2496,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item--fCo .item--fCo-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item--fCo .item--fCo-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item--fCo .item--fCo-sub-1 {
   font-size: 1.6rem;
@@ -2522,7 +2522,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .item-90-d39 .item-90-d39-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .item-90-d39 .item-90-d39-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .item-90-d39 .item-90-d39-sub-1 {
   font-size: 1.6rem;
@@ -2548,7 +2548,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-zsdq-jZd .ambilight--m2s .ambilight--m2s-sub-0 {}
+/* .item-3-3Ru .auto-group-zsdq-jZd .ambilight--m2s .ambilight--m2s-sub-0 {} */
 
 .item-3-3Ru .auto-group-zsdq-jZd .ambilight--m2s .ambilight--m2s-sub-1 {
   font-size: 1.6rem;
@@ -2900,7 +2900,7 @@ body {
   align-items: baseline;
 }
 
-.item-3-3Ru .auto-group-xszp-h8o .item-7-495-927-01-21-ZDV .item-7-495-927-01-21-ZDV-sub-0 {}
+/* .item-3-3Ru .auto-group-xszp-h8o .item-7-495-927-01-21-ZDV .item-7-495-927-01-21-ZDV-sub-0 {} */
 
 .item-3-3Ru .auto-group-xszp-h8o .item-7-495-927-01-21-ZDV .item-7-495-927-01-21-ZDV-sub-1 {
   font-size: 1.6rem;
@@ -3709,7 +3709,7 @@ body {
   flex-shrink: 0;
 }
 
-.item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-0 {}
+/* .item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-0 {} */
 
 .item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-1 {
   font-size: 1.6rem;
@@ -3720,7 +3720,7 @@ body {
   font-family: Inter, 'Source Sans Pro';
 }
 
-.item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-2 {}
+/* .item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-2 {} */
 
 .item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-3 {
   font-size: 1.6rem;
@@ -3731,7 +3731,7 @@ body {
   font-family: Inter, 'Source Sans Pro';
 }
 
-.item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-4 {}
+/* .item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-4 {} */
 
 .item-3-3Ru .auto-group-kwp7-e3m .wave-s--vXd .wave-s--vXd-sub-5 {
   font-size: 1.6rem;
