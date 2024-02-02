@@ -45,4 +45,9 @@ export class ProductService {
     return await this.http.get<Product[]>(this.urlServer + "/categories/name/" + categoryName);
   }
 
+  async getProductsTop() {
+    // return [];
+    return await this.http.get<Product[]>(this.urlServer + "/" + 12);
+  }
+
 }
