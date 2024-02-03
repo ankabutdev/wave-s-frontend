@@ -10,12 +10,14 @@ import { ProductcomComponent } from '../../components/products/productcom/produc
 import { Product } from '../../../interfaces/products';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
+import { SliderComponent } from '../../components/slider/slider.component';
 
 @Component({
   selector: 'app-products',
   standalone: true,
   imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
-    DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule],
+    DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule,
+    SliderComponent],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
