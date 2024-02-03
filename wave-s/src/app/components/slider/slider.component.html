@@ -1,0 +1,45 @@
+<!-- <div class="news-carousel">
+    <ul class="news__list">
+        <li class="news__item" *ngFor="let news of newsItems">
+            <div class="news__image">
+                <img [src]="news.imageUrl" alt="Image" class="news__img" />
+            </div>
+            <h3 class="news__subtitle">{{ news.title }}</h3>
+            <div class="news__item__details">
+                <a [href]="news.link" class="news__item__link">
+                    Читать далее
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="40" height="40" rx="5" fill="#0C91FC" />
+                        <path d="M13.8181 25.4547L26.1818 13.0911M26.1818 13.0911H13.8181M26.1818 13.0911V25.4547"
+                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div> -->
+
+<div class="card">
+    <p-carousel [value]="products" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions">
+        <ng-template let-product pTemplate="item">
+            <div class="product-item">
+                <div class="product-item-content">
+                    <div class="mb-3">
+                        <img src="https://primefaces.org/cdn/primeng/images/demo/product/{{ product.image }}"
+                            [alt]="product.name" class="product-image" />
+                    </div>
+                    <div>
+                        <h4 class="mb-1">{{ product.name }}</h4>
+                        <h6 class="mt-0 mb-3">{{ '$' + product.price }}</h6>
+                        <p-tag [value]="product.inventoryStatus"
+                            [severity]="getSeverity(product.inventoryStatus)"></p-tag>
+                        <div class="mt-5 flex align-items-center justify-content-center gap-2">
+                            <p-button icon="pi pi-search" [rounded]="true" />
+                            <p-button icon="pi pi-star-fill" [rounded]="true" severity="secondary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </p-carousel>
+</div>
