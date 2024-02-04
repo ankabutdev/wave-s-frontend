@@ -10,12 +10,7 @@ import { ProductcomComponent } from '../../components/products/productcom/produc
 import { Product } from '../../../interfaces/products';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
-<<<<<<< HEAD
 import { SliderComponent } from '../../components/slider/slider.component';
-=======
-import { SliderComponent } from '../../components/slider/slider/slider.component';
->>>>>>> d02c4c7639696de9d7e09bbeac6b7be84d7b125f
-
 @Component({
   selector: 'app-products',
   standalone: true,
