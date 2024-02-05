@@ -9,13 +9,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { DialogModule } from 'primeng/dialog';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
+import { SliderComponent } from '../../components/slider/slider.component';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
-    MatDialogModule, MatButtonModule, DialogModule, FormsModule, ReactiveFormsModule],
+    MatDialogModule, MatButtonModule, DialogModule, FormsModule, ReactiveFormsModule,
+  SliderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

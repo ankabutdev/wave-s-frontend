@@ -2,64 +2,53 @@
     <p-carousel [value]="data" [numVisible]="3" [numScroll]="3" [circular]="true"
         [responsiveOptions]="responsiveOptions" [autoplayInterval]="3000">
         <ng-template let-product pTemplate="item">
-            <section>
-                <li class="products__item">
-                    <div class="products__maincontent">
-                        <div class="products__image">
-                            <img [src]="product.imagePath | imageUrl" alt="Products" class="products__img" />
-                        </div>
-                        <h3 class="products__title">
-                            {{product.name}}
-                        </h3>
-                        <div class="products__type">
-                            <span class="products__type__span">Тип:</span>
-                            <p class="products__type__info">{{product.type}}</p>
-                        </div>
-                        <div class="products__details">
-                            <ul class="products__details__list">
-                                <li class="products__details__item">
-                                    <span>Корпус:</span>
-                                    {{product.frame}}
-                                </li>
-                                <li class="products__details__item">
-                                    <span>Монтируется:</span>
-                                    {{product.mounted}}
-                                </li>
-                                <li class="products__details__item">
-                                    <span>Экран:</span>
-                                    {{product.screen}}
-                                </li>
-                                <li class="products__details__item">
-                                    <span>Кнопки:</span>
-                                    {{product.buttons}}
-                                </li>
-                                <li class="products__details__item">
-                                    <span>Подсветка:</span>
-                                    {{product.backlight}}
-                                </li>
-                                <li class="products__details__item">
-                                    <span>Подсветка:</span>
-                                    {{product.weight}}
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="products__payments">
-                            <h1 class="products__payments__subtitle">
-                                <a [routerLink]="['/details', product.id]">Показать все функции</a>
-                            </h1>
-                        </div>
-                        <div class="products__price">
-                            <span class="products__price__cost"> {{product.product}} $ </span>
-                            <a href="products#request" class="products__price__link products__order__link">
-                                Заказать
-                            </a>
-                        </div>
+            <li class="products__item">
+                <div class="products__maincontent">
+                    <div class="products__image">
+                        <img [src]="product.imagePath | imageUrl" alt="Products" class="products__img" />
                     </div>
-                </li>
-            </section>
-
-
-
+                    <h3 class="products__title">
+                        {{product.name}}
+                    </h3>
+                    <div class="products__type">
+                        <span class="products__type__span">Тип:</span>
+                        <p class="products__type__info">{{product.type}}</p>
+                    </div>
+                    <div class="products__details">
+                        <ul class="products__details__list">
+                            <li class="products__details__item">
+                                <span>Корпус:</span>
+                                {{product.frame}}
+                            </li>
+                            <li class="products__details__item">
+                                <span>Монтируется:</span>
+                                {{product.mounted}}
+                            </li>
+                            <li class="products__details__item">
+                                <span>Экран:</span>
+                                {{product.screen}}
+                            </li>
+                            <li class="products__details__item">
+                                <span>Кнопки:</span>
+                                {{product.buttons}}
+                            </li>
+                            <li class="products__details__item">
+                                <span>Подсветка:</span>
+                                {{product.backlight}}
+                            </li>
+                            <li class="products__details__item">
+                                <span>Подсветка:</span>
+                                {{product.weight}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="products__payments">
+                        <h1 class="products__payments__subtitle">
+                            <a [routerLink]="['/details', product.id]">Показать все функции</a>
+                        </h1>
+                    </div>
+                </div>
+            </li>
         </ng-template>
     </p-carousel>
 </div>

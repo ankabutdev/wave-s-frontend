@@ -14,7 +14,7 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, CarouselModule, TagModule, ButtonModule, ImageUrlPipe, RouterLink],
   templateUrl: './slider.component.html',
-  styleUrl: './slider.component.scss'
+  styleUrl: './slider.component.css'
 })
 
 export class SliderComponent {
