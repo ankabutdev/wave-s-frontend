@@ -47,7 +47,7 @@ export class ProductService {
 
   // --------------------------
 
-  getProductsData() {
+  getProductsDemoData() {
     return [
       {
         id: 1,
@@ -273,15 +273,15 @@ export class ProductService {
   }
 
   getProductsMini() {
-    return Promise.resolve(this.getProductsData().slice(0, 5));
+    return Promise.resolve(this.getProductsDemoData().slice(0, 5));
   }
 
   getProductsSmall() {
-    return Promise.resolve(this.getProductsData().slice(0, 10));
+    return Promise.resolve(this.getProductsDemoData().slice(0, 10));
   }
 
   getProducts() {
-    return Promise.resolve(this.getProductsData());
+    return Promise.resolve(this.getProductsDemoData());
   }
 
   async getProductsTop() {

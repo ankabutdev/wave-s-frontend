@@ -15,8 +15,7 @@ import { SliderComponent } from '../../components/slider/slider.component';
   selector: 'app-products',
   standalone: true,
   imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
-    DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule,
-    SliderComponent],
+    DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

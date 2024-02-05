@@ -5,41 +5,44 @@ import { CarouselModule } from 'primeng/carousel';
 import { TagModule } from 'primeng/tag';
 import { ProductService } from '../../../services/prodcuts/product.service';
 import { Product } from '../../../interfaces/products';
+import { ImageUrlPipe } from '../../pipes/image-url-pipe';
+import { RouterLink } from '@angular/router';
+
 
 @Component({
   selector: 'app-slider',
   standalone: true,
-  imports: [CommonModule, CarouselModule, TagModule, ButtonModule],
+  imports: [CommonModule, CarouselModule, TagModule, ButtonModule, ImageUrlPipe, RouterLink],
   templateUrl: './slider.component.html',
   styleUrl: './slider.component.scss'
 })
 
 export class SliderComponent {
-
-  products!: Product[];
+  data!: Product[];
 
   responsiveOptions: any[] | undefined;
 
   constructor(private productService: ProductService) { }
 
-  ngOnInit() {
-    this.productService.getProductsMini().then((products) => {
-      this.products = products;
+  async ngOnInit() {
+    (await this.productService.getAllProducts()).subscribe(products => {
+      this.data = products;
     });
+    console.log(this.data);
 
     this.responsiveOptions = [
       {
-        breakpoint: '1400px',
-        numVisible: 3,
-        numScroll: 3
+        breakpoint: '1199px',
+        numVisible: 1,
+        numScroll: 1
       },
       {
-        breakpoint: '1220px',
+        breakpoint: '991px',
         numVisible: 2,
-        numScroll: 2
+        numScroll: 1
       },
       {
-        breakpoint: '1100px',
+        breakpoint: '767px',
         numVisible: 1,
         numScroll: 1
       }
