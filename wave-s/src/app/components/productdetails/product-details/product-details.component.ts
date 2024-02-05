@@ -7,13 +7,14 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../../../../services/users/user.service';
 import { DialogModule } from 'primeng/dialog';
 import { ImageUrlPipe } from '../../../pipes/image-url-pipe';
+import { SliderComponent } from "../../slider/slider.component";
 
 @Component({
-  selector: 'app-product-details',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink, DialogModule, ImageUrlPipe],
-  templateUrl: './product-details.component.html',
-  styleUrl: './product-details.component.css'
+    selector: 'app-product-details',
+    standalone: true,
+    templateUrl: './product-details.component.html',
+    styleUrl: './product-details.component.css',
+    imports: [CommonModule, ReactiveFormsModule, RouterLink, DialogModule, ImageUrlPipe, SliderComponent]
 })
 export class ProductDetailsComponent {
 

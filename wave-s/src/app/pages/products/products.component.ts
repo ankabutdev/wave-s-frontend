@@ -12,12 +12,12 @@ import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModu
 import { UserService } from '../../../services/users/user.service';
 import { SliderComponent } from '../../components/slider/slider.component';
 @Component({
-  selector: 'app-products',
-  standalone: true,
-  imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
-    DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule],
-  templateUrl: './products.component.html',
-  styleUrl: './products.component.css'
+    selector: 'app-products',
+    standalone: true,
+    templateUrl: './products.component.html',
+    styleUrl: './products.component.css',
+    imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
+        DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule, SliderComponent]
 })
 export class ProductsComponent {
 
