@@ -169,18 +169,21 @@
             </div>
         </section>
 
+        <!-- ! Pagination -->
+        <p-paginator class="paginator" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+            [totalRecords]="120"></p-paginator>
+
         <!-- ! NEWS SECTION  -->
         <section class="news">
             <div class="container">
 
                 <div class="products__header">
-                    <h2 class="products__maintitle">Популярные товары</h2>
+                    <h1 class="products__maintitle">Популярные товары</h1>
                 </div>
                 <!-- SLIDER -->
                 <app-slider></app-slider>
             </div>
         </section>
-
 
         <!-- ! REQUEST SECITION  -->
         <section id="request" class="request">

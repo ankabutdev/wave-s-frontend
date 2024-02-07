@@ -11,14 +11,19 @@ import { Product } from '../../../interfaces/products';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
 import { SliderComponent } from '../../components/slider/slider.component';
+import { PaginatorModule, PaginatorState } from 'primeng/paginator';
+import { PageEvent } from '../../../interfaces/paginator';
+
 @Component({
-    selector: 'app-products',
-    standalone: true,
-    templateUrl: './products.component.html',
-    styleUrl: './products.component.css',
-    imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
-        DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule, SliderComponent]
+  selector: 'app-products',
+  standalone: true,
+  templateUrl: './products.component.html',
+  styleUrl: './products.component.css',
+  imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
+    DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule, SliderComponent,
+    PaginatorModule]
 })
+
 export class ProductsComponent {
 
   loaderOpacity = 1;
@@ -37,6 +42,14 @@ export class ProductsComponent {
 
     this.GetAllProducts();
     this.applyForms();
+  }
+
+  first: number = 0;
+  rows: number = 10;
+
+  onPageChange(event: PageEvent) {
+    this.first = event.first || 0;
+    this.rows = event.rows || 10;
   }
 
   private async applyForms() {
