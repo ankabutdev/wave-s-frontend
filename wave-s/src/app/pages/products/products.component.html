@@ -167,11 +167,12 @@
                     </section>
                 </div>
             </div>
-        </section>
+            <!-- Pagination -->
+            <app-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                [totalRecords]="totalRecords"></app-paginator>
 
-        <!-- ! Pagination -->
-        <p-paginator class="paginator" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
-            [totalRecords]="120"></p-paginator>
+            <!-- <app-paginator></app-paginator> -->
+        </section>
 
         <!-- ! NEWS SECTION  -->
         <section class="news">

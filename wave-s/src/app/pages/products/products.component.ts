@@ -13,6 +13,11 @@ import { UserService } from '../../../services/users/user.service';
 import { SliderComponent } from '../../components/slider/slider.component';
 import { PaginatorModule, PaginatorState } from 'primeng/paginator';
 import { PageEvent } from '../../../interfaces/paginator';
+import { count, error } from 'console';
+import { PaginatorComponent } from '../../components/paginator/paginator.component';
+import { first } from 'rxjs';
+import { serialize } from 'v8';
+import { response } from 'express';
 
 @Component({
   selector: 'app-products',
@@ -21,7 +26,7 @@ import { PageEvent } from '../../../interfaces/paginator';
   styleUrl: './products.component.css',
   imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
     DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule, SliderComponent,
-    PaginatorModule]
+    PaginatorModule, PaginatorComponent]
 })
 
 export class ProductsComponent {
@@ -36,20 +41,22 @@ export class ProductsComponent {
 
   applyForm!: FormGroup;
 
+  totalRecords!: number;
+  first: number = 0;
+  rows: number = 9;
+  val!: number;
+
+  async onPageChange(event: { first: number, rows: number }) {
+    this.first = event.first;
+    this.rows = event.rows;
+    await this.GetAllProducts();
+  }
+
   constructor(private renderer: Renderer2, private router: Router,
     private productService: ProductService, private fb: FormBuilder,
     private userService: UserService) {
 
-    this.GetAllProducts();
     this.applyForms();
-  }
-
-  first: number = 0;
-  rows: number = 10;
-
-  onPageChange(event: PageEvent) {
-    this.first = event.first || 0;
-    this.rows = event.rows || 10;
   }
 
   private async applyForms() {
@@ -61,15 +68,26 @@ export class ProductsComponent {
   }
 
   private async GetAllProducts() {
-    (await this.productService.getAllProducts()).subscribe(
+    await this.productsCount();
+    (await this.productService.getAllProducts(this.first)).subscribe(
       response => {
         this.productList = response;
-        console.log('getall successful');
+        console.log('getall successfully');
       },
       error => {
         console.error('Error fetching products:', error);
       }
     );
+  }
+
+  async productsCount() {
+    (await this.productService.getCount()).subscribe(response => {
+      this.totalRecords = response * 9;
+    },
+      error => {
+        console.error('Error fetching products:', error);
+      })
+
   }
 
   async ngAfterViewInit() {

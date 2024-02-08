@@ -19,7 +19,7 @@ export class ProductService {
   // Only GetAll And GetById
   urlGateWayServer = "http://185.217.131.163:5285/products"
 
-  async getAllProducts() {
+  async getAllProducts(pageNumber: null | number) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -28,13 +28,24 @@ export class ProductService {
       })
     }
 
-    return await this.http.get<Product[]>(this.urlGateWayServer, httpOptions)
+    if (pageNumber === null || pageNumber == 0) {
+      pageNumber = 1;
+    }
+    else if (pageNumber > 1) {
+      pageNumber = pageNumber / 9;
+    }
+    
+    return await this.http.get<Product[]>(this.urlGateWayServer + "?page=" + pageNumber, httpOptions)
       .pipe(
         catchError((error: any) => {
           console.error('Error fetching products:', error);
           throw error;
         })
       );
+  }
+
+  async getCount() {
+    return await this.http.get<number>(this.urlGateWayServer + "/count");
   }
 
   async getById(id: number) {

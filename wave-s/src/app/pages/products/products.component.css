@@ -48,5 +48,6 @@
 
 
 .paginator {
- background-color: #104f68;
+    background-color: black;
+    height: auto;
 }

@@ -25,7 +25,7 @@ export class SliderComponent {
   constructor(private productService: ProductService) { }
 
   async ngOnInit() {
-    (await this.productService.getAllProducts()).subscribe(products => {
+    (await this.productService.getAllProducts(null)).subscribe(products => {
       this.data = products;
     });
     console.log(this.data);

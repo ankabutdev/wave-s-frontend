@@ -1,0 +1,9 @@
+<!-- <section>
+    <div class="card flex justify-content-center">
+        <p-paginator (onPageChange)="onPageChanged($event)" [first]="first" [rows]="rows"
+            [totalRecords]="totalRecords"></p-paginator>
+    </div>
+</section> -->
+
+<p-paginator (onPageChange)="onPageChanged($event)" [first]="first" [rows]="rows" [totalRecords]="totalRecords"
+                [rowsPerPageOptions]="[9]"></p-paginator>
