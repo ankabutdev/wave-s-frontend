@@ -11,13 +11,9 @@ import { Product } from '../../../interfaces/products';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
 import { SliderComponent } from '../../components/slider/slider.component';
-import { PaginatorModule, PaginatorState } from 'primeng/paginator';
-import { PageEvent } from '../../../interfaces/paginator';
-import { count, error } from 'console';
+import { PaginatorModule } from 'primeng/paginator';
 import { PaginatorComponent } from '../../components/paginator/paginator.component';
-import { first } from 'rxjs';
-import { serialize } from 'v8';
-import { response } from 'express';
+import { MatPaginatorModule } from '@angular/material/paginator'
 
 @Component({
   selector: 'app-products',
@@ -26,10 +22,27 @@ import { response } from 'express';
   styleUrl: './products.component.css',
   imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
     DialogModule, ProductcomComponent, FormsModule, ReactiveFormsModule, SliderComponent,
-    PaginatorModule, PaginatorComponent]
+    PaginatorModule, PaginatorComponent, MatPaginatorModule]
 })
 
 export class ProductsComponent {
+
+  // pageNo!: number;
+
+  // async pageChanged(event: any) {
+  //   if (event.pageIndex > this.pageNo) {
+  //     this.currentPage += 1;
+  //     // Clicked on next button
+  //     await this.GetAllProducts(this.currentPage);
+  //   } else {
+  //     // Clicked on previous button
+  //     this.currentPage -= 1;
+  //     await this.GetAllProducts(this.currentPage);
+  //   }
+  // }
+
+  // pageSize: number = 9; // Page size for pagination
+  // currentPage: number = 1; // Current page
 
   loaderOpacity = 1;
   loaderVisibility = 'visible';
@@ -47,7 +60,7 @@ export class ProductsComponent {
   val!: number;
 
   async onPageChange(event: { first: number, rows: number }) {
-    this.first = event.first;
+    this.first = event.first + 1;
     this.rows = event.rows;
     await this.GetAllProducts();
   }
@@ -55,7 +68,7 @@ export class ProductsComponent {
   constructor(private renderer: Renderer2, private router: Router,
     private productService: ProductService, private fb: FormBuilder,
     private userService: UserService) {
-
+    // this.pageNo = 0;
     this.applyForms();
   }
 
@@ -82,7 +95,8 @@ export class ProductsComponent {
 
   async productsCount() {
     (await this.productService.getCount()).subscribe(response => {
-      this.totalRecords = response * 9;
+      // fix it this code not ready
+      this.totalRecords = response;
     },
       error => {
         console.error('Error fetching products:', error);

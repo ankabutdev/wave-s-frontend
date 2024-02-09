@@ -27,14 +27,14 @@ export class ProductService {
         'Access-Control-Allow-Credentials': 'true'
       })
     }
-
     if (pageNumber === null || pageNumber == 0) {
       pageNumber = 1;
     }
+    // this is for p-paginator
     else if (pageNumber > 1) {
-      pageNumber = pageNumber / 9;
+      pageNumber = Math.ceil(pageNumber / 9);
     }
-    
+
     return await this.http.get<Product[]>(this.urlGateWayServer + "?page=" + pageNumber, httpOptions)
       .pipe(
         catchError((error: any) => {

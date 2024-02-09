@@ -22,7 +22,7 @@ interface PageEvent {
 export class PaginatorComponent {
   @Input() first: number = 0;
   @Input() rows: number = 9;
-  @Input() totalRecords!: number;
+  @Input() totalRecords: number = 0;
   @Output() onPageChange: EventEmitter<{ first: number, rows: number }> = new EventEmitter();
 
   constructor() { }
