@@ -170,16 +170,23 @@
             <!-- <mat-paginator (page)="pageChanged($event)" [length]="totalRecords" [pageSize]="pageSize"
                 [pageIndex]="pageNo" [pageSizeOptions]="[9]">
             </mat-paginator> -->
-
-            <!-- Pagination -->
+            <br>
+            <br>
+            <br>
             <div class="paginator">
                 <app-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
                     [totalRecords]="totalRecords"></app-paginator>
             </div>
+
+            <!-- Pagination -->
+            <!-- <app-paginator class="paginator" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
+                [totalRecords]="totalRecords"></app-paginator> -->
         </section>
+
 
         <!-- ! NEWS SECTION  -->
         <section class="news">
+
             <div class="container">
 
                 <div class="products__header">
