@@ -5,10 +5,10 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ProductDetailsComponent } from './components/productdetails/product-details/product-details.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { PaginatorComponent } from './components/paginator/paginator.component';
-import { ContactComponent } from './components/contact/contact.component';
 import { AboutCompanyComponent } from './components/about-company/about-company.component';
 import { ObjectsComponent } from './components/objects/objects.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { CommonPageComponent } from './pages/common-page/common-page.component';
 
 export const routes: Routes = [
