@@ -10,6 +10,8 @@ import { DialogModule } from 'primeng/dialog';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
 import { SliderComponent } from '../../components/slider/slider.component';
+import { PageName } from '../../../interfaces/pages-router-name';
+import { RouterService } from '../../../services/RouterService';
 
 
 @Component({
@@ -17,12 +19,18 @@ import { SliderComponent } from '../../components/slider/slider.component';
   standalone: true,
   imports: [ButtonModule, TabMenuModule, BadgeModule, CommonModule,
     MatDialogModule, MatButtonModule, DialogModule, FormsModule, ReactiveFormsModule,
-  SliderComponent],
+    SliderComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 
 export class HomeComponent {
+
+  async newMessage() {
+    this.router.navigate(['/common-page'])
+    await this.routerService.changeMessage('contacts')
+  }
+
   loaderOpacity = 1;
   loaderVisibility = 'visible';
 
@@ -32,7 +40,7 @@ export class HomeComponent {
 
   constructor(private renderer: Renderer2, private router: Router,
     private dialog: MatDialog, private fb: FormBuilder,
-    private userService: UserService) {
+    private userService: UserService, private routerService: RouterService) {
     this.applyForms();
   }
 
