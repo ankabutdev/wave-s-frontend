@@ -1,27 +1,20 @@
-import { CommonModule } from '@angular/common';
 import { Component, Renderer2 } from '@angular/core';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { DialogModule } from 'primeng/dialog';
-import { UserService } from '../../../services/users/user.service';
 import { PageName } from '../../../interfaces/pages-router-name';
-import { RouterService } from '../../../services/RouterService';
-import { ContactComponent } from '../contact/contact.component';
-import { AboutUsComponent } from '../about-us/about-us.component';
-import { AboutCompanyComponent } from '../about-company/about-company.component';
-import { Title } from '@angular/platform-browser';
+import { UserService } from '../../../services/users/user.service';
+import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
+import { DialogModule } from 'primeng/dialog';
 
 @Component({
-  selector: 'app-common-page',
+  selector: 'app-contact',
   standalone: true,
   imports: [CommonModule, RouterLink,
-    ReactiveFormsModule, DialogModule, ContactComponent,
-    AboutCompanyComponent, AboutUsComponent],
-  templateUrl: './common-page.component.html',
-  styleUrl: './common-page.component.css'
+    ReactiveFormsModule, DialogModule],
+  templateUrl: './contact.component.html',
+  styleUrl: './contact.component.css'
 })
-
-export class CommonPageComponent {
+export class ContactComponent {
 
   loaderOpacity = 1;
   loaderVisibility = 'visible';
@@ -33,7 +26,7 @@ export class CommonPageComponent {
 
   constructor(private fb: FormBuilder, private renderer: Renderer2,
     private router: Router, private userService: UserService
-    ) {
+  ) {
     // console.log(route.snapshot.title);
     this.applyForms();
   }

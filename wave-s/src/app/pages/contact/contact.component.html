@@ -69,8 +69,7 @@
             <!-- ! HEADER CONTENT-NAVBAR SECTION  -->
             <div class="header__content">
                 <div class="header__navbar">
-                    <img src="../../../assets/images/logo.svg" alt="Logo Site" (click)="redirectToHomePage()"
-                        class="cursor-pointer" />
+                    <img src="../../../assets/images/logo.svg" alt="Logo Site" [routerLink]="'/home'" />
                     <ul class="header__navbar__list">
                         <li class="header__navbar__item">
                             <a [routerLink]="'/products'" class="header__navbar__link">Оборудование</a>
@@ -108,7 +107,7 @@
                             </g>
                         </svg>
                     </button> -->
-                    <a href="products#request" class="order__call" id="order__call">
+                    <a href="contacts#request" class="order__call" id="order__call">
                         Заказать звонок
                     </a>
                 </div>
@@ -122,80 +121,22 @@
             <div class="products__page__header">
                 <div class="container">
                     <p class="products__page__header__info">
-                        <span [routerLink]="'/home'" class="glavniy" class="cursor-pointer"> Главная / </span>
-                        <span class="cursor-pointer">Оборудование </span>
+                        <span [routerLink]="'/home'" class="glavniy"> Главная / </span>
+                        <span class="glavniy"> Контакты </span>
                     </p>
-                    <h1 class="products__page__title">Оборудование</h1>
                 </div>
             </div>
-            <div class="container">
-                <!-- ! PRODUCTS CONTENT  -->
-                <div class="products__page__content">
-
-                    <!-- ! PRODUCTS CATEGORIES  -->
-                    <ul class="products__page__categories__list">
-                        <li class="products__page__categories__item" (click)="getProductsByCategory(null)"
-                            [class.active]="selectedCategory === 'Все оборудование'">
-                            Все оборудование
-                        </li>
-                        <li id="box" class="products__page__categories__item"
-                            (click)="getProductsByCategory('Self-service car washes')"
-                            [class.active]="selectedCategory === 'Self-service car washes'">
-                            Мойки самообслуживания
-                        </li>
-                        <li class="products__page__categories__item"
-                            (click)="getProductsByCategory('Add. MSO equipment')"
-                            [class.active]="selectedCategory === 'Add. MSO equipment'">
-                            Доп. оборудование МСО
-                        </li>
-                        <li class="products__page__categories__item"
-                            (click)="getProductsByCategory('Self-service vacuum cleaners')"
-                            [class.active]="selectedCategory === 'Self-service vacuum cleaners'">
-                            Пылесосы самообслуживания
-                        </li>
-                        <li class="products__page__categories__item" (click)="getProductsByCategory('Other equipment')"
-                            [class.active]="selectedCategory === 'Other equipment'">
-                            Прочее оборудование
-                        </li>
-                    </ul>
-
-                    <!-- ! PRODUCTS  -->
-                    <section class="products__list">
-                        @for (product of productList; track product.id) {
-                        <app-productcom [data]="product"> </app-productcom>
-                        }
-                    </section>
-                </div>
-            </div>
-            <!-- <mat-paginator (page)="pageChanged($event)" [length]="totalRecords" [pageSize]="pageSize"
-                [pageIndex]="pageNo" [pageSizeOptions]="[9]">
-            </mat-paginator> -->
-            <br>
-            <br>
-            <br>
-            <div class="paginator">
-                <app-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
-                    [totalRecords]="totalRecords"></app-paginator>
-            </div>
-
-            <!-- Pagination -->
-            <!-- <app-paginator class="paginator" (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows"
-                [totalRecords]="totalRecords"></app-paginator> -->
         </section>
 
+        <!-- PAGE REPLACE FIELD -->
 
-        <!-- ! NEWS SECTION  -->
-        <section class="news">
+        <!-- <container-element [ngSwitch]="message">
+            <app-contact *ngSwitchCase="'contacts'"></app-contact>
+            <app-about-us *ngSwitchCase="'about-us'"></app-about-us>
+            <app-about-company *ngSwitchCase="'about-company'"></app-about-company>
 
-            <div class="container">
-
-                <div class="products__header">
-                    <h1 class="products__maintitle">Популярные товары</h1>
-                </div>
-                <!-- SLIDER -->
-                <app-slider></app-slider>
-            </div>
-        </section>
+            <app-contact *ngSwitchDefault>...</app-contact>
+        </container-element> -->
 
         <!-- ! REQUEST SECITION  -->
         <section id="request" class="request">
@@ -236,7 +177,7 @@
                     <img src="../../../assets/images/footer__details__rating.svg" alt="Rating Site 4.5/5"
                         class="footer__ratings__img" />
                     <div class="footer__details__socials">
-                        <a href="products#" class="footer__details__link">
+                        <a href="contacts#" class="footer__details__link">
                             <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -247,7 +188,7 @@
                                     fill="white" />
                             </svg>
                         </a>
-                        <a href="products#" class="footer__details__link">
+                        <a href="contacts#" class="footer__details__link">
                             <svg width="39" height="39" viewBox="0 0 39 39" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_21_1177)">
@@ -272,19 +213,19 @@
                     <span class="footer__equip__title">Оборудование</span>
                     <ul class="footer__equip__list">
                         <li class="footer__equip__item">
-                            <a href="products#" class="footer__equip__link">О компании</a>
+                            <a href="contacts#" class="footer__equip__link">О компании</a>
                         </li>
                         <li class="footer__equip__item">
-                            <a href="products#" class="footer__equip__link">Аксессуары для АВД</a>
+                            <a href="contacts#" class="footer__equip__link">Аксессуары для АВД</a>
                         </li>
                         <li class="footer__equip__item">
-                            <a href="products#" class="footer__equip__link">Пылесосы самообслуживания</a>
+                            <a href="contacts#" class="footer__equip__link">Пылесосы самообслуживания</a>
                         </li>
                         <li class="footer__equip__item">
-                            <a href="products#" class="footer__equip__link">Разменные аппараты</a>
+                            <a href="contacts#" class="footer__equip__link">Разменные аппараты</a>
                         </li>
                         <li class="footer__equip__item">
-                            <a href="products#" class="footer__equip__link">
+                            <a href="contacts#" class="footer__equip__link">
                                 Рукомойник для мойки самообслуживания
                             </a>
                         </li>
@@ -344,11 +285,11 @@
                 <span class="footer__copyright__info">
                     © 2014-2023 «Wave-S». Мойки самообслуживания
                 </span>
-                <a href="products#" class="footer__copyright__link"> | Карта сайта </a>
-                <a href="products#" class="footer__copyright__link">
+                <a href="details#" class="footer__copyright__link"> | Карта сайта </a>
+                <a href="details#" class="footer__copyright__link">
                     | Контакты в регионах
                 </a>
-                <a href="products#" class="footer__copyright__link">
+                <a href="details#" class="footer__copyright__link">
                     | Этапы строительства
                 </a>
             </div>

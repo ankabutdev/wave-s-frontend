@@ -89,16 +89,16 @@
                                 </a>
                             </li>
                             <li class="header__navbar__item">
-                                <a href="#" class="header__navbar__link">Объекты</a>
+                                <a [routerLink]="'/objects'" class="header__navbar__link">Объекты</a>
                             </li>
                             <li class="header__navbar__item">
-                                <a href="#" class="header__navbar__link">О компании</a>
+                                <a [routerLink]="'/about-company'" class="header__navbar__link">О компании</a>
                             </li>
                             <li class="header__navbar__item">
-                                <a href="#" class="header__navbar__link">Пресса о нас</a>
+                                <a [routerLink]="'/about-us'" class="header__navbar__link">Пресса о нас</a>
                             </li>
                             <li class="header__navbar__item">
-                                <a (click)="newMessage()" class="header__navbar__link">Контакты</a>
+                                <a [routerLink]="'/contacts'" class="header__navbar__link">Контакты</a>
                             </li>
 
                         </ul>
