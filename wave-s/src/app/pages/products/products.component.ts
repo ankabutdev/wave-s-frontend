@@ -158,7 +158,8 @@ export class ProductsComponent {
         await this.proccess();
         await this.applyForms();
       }
-    }
+    } else
+      alert("Please to fill fields");
   }
   // Method to close the dialog
   closeDialog() {

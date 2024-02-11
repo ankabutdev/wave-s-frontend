@@ -1,6 +1,5 @@
 import { Component, Renderer2 } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { PageName } from '../../../interfaces/pages-router-name';
 import { UserService } from '../../../services/users/user.service';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink } from '@angular/router';
@@ -21,8 +20,6 @@ export class ContactComponent {
 
   private loaderTimeout: any;
   applyForm!: FormGroup;
-
-  pageName!: PageName;
 
   constructor(private fb: FormBuilder, private renderer: Renderer2,
     private router: Router, private userService: UserService
@@ -86,7 +83,8 @@ export class ContactComponent {
         await this.proccess();
         await this.applyForms();
       }
-    }
+    } else
+      alert("Please to fill fields");
   }
 
   // Method to close the dialog

@@ -88,6 +88,7 @@ export class HomeComponent {
   }
 
   async showDialog() {
+
     // Check if the phone number format is valid before proceeding
     const phoneNumberControl = this.applyForm.get('phoneNumber');
     if (phoneNumberControl && phoneNumberControl.value) {
@@ -99,8 +100,10 @@ export class HomeComponent {
       } else {
         await this.proccess();
         await this.applyForms();
+        alert("hi")
       }
-    }
+    } else
+      alert("Please to fill fields");
   }
   // Method to close the dialog
   closeDialog() {
