@@ -27,23 +27,6 @@ import { MatPaginatorModule } from '@angular/material/paginator'
 
 export class ProductsComponent {
 
-  // pageNo!: number;
-
-  // async pageChanged(event: any) {
-  //   if (event.pageIndex > this.pageNo) {
-  //     this.currentPage += 1;
-  //     // Clicked on next button
-  //     await this.GetAllProducts(this.currentPage);
-  //   } else {
-  //     // Clicked on previous button
-  //     this.currentPage -= 1;
-  //     await this.GetAllProducts(this.currentPage);
-  //   }
-  // }
-
-  // pageSize: number = 9; // Page size for pagination
-  // currentPage: number = 1; // Current page
-
   loaderOpacity = 1;
   loaderVisibility = 'visible';
 
@@ -68,7 +51,6 @@ export class ProductsComponent {
   constructor(private renderer: Renderer2, private router: Router,
     private productService: ProductService, private fb: FormBuilder,
     private userService: UserService) {
-    // this.pageNo = 0;
     this.applyForms();
   }
 
