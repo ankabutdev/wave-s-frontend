@@ -50,7 +50,6 @@ export class HomeComponent {
     });
   }
 
-
   ngAfterViewInit() {
     this.loaderTimeout = setTimeout(() => {
       this.renderer.setStyle(this.loader, 'opacity', '0');
