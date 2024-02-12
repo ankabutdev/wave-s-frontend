@@ -1,18 +1,16 @@
-import { Component, Renderer2, AfterViewInit, OnDestroy, OnInit, ɵɵqueryRefresh } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { TabMenuModule } from 'primeng/tabmenu';
 import { BadgeModule } from 'primeng/badge';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { MatDialog, MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { DialogModule } from 'primeng/dialog';
 import { AbstractControl, FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../../services/users/user.service';
 import { SliderComponent } from '../../components/slider/slider.component';
-import { PageName } from '../../../interfaces/pages-router-name';
 import { RouterService } from '../../../services/RouterService';
-
 
 @Component({
   selector: 'app-home',
