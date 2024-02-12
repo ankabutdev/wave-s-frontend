@@ -9,7 +9,6 @@ import { AboutCompanyComponent } from './pages/about-company/about-company.compo
 import { ObjectsComponent } from './pages/objects/objects.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { CommonPageComponent } from './pages/common-page/common-page.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,7 +21,6 @@ export const routes: Routes = [
     { path: 'about-company', component: AboutCompanyComponent, title: 'about-company' },
     { path: 'objects', component: ObjectsComponent, title: 'objects' },
     { path: 'about-us', component: AboutUsComponent, title: 'about-us' },
-    { path: 'common-page', component: CommonPageComponent, title: 'common-page' },
     { path: '**', component: NotfoundComponent }
 ];
 
