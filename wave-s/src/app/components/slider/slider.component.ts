@@ -28,7 +28,6 @@ export class SliderComponent {
     (await this.productService.getAllProducts(null)).subscribe(products => {
       this.data = products;
     });
-    console.log(this.data);
 
     this.responsiveOptions = [
       {
